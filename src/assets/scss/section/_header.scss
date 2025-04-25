@@ -1,0 +1,148 @@
+// Header Section
+#header {
+    @include position-fixed;
+    z-index: 10000;
+    box-shadow: 0 1px 10px rgba(0, 0, 0, 0.3);
+    // background-color: #f3ede8;
+    background-color: white;
+}
+
+// Header Divider
+.hr-1 {
+    border: 0;
+    height: 1.4px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+}
+
+// Header Inner Container
+.header__inner {
+    @include flex-between;
+    // background-color: rgba(180, 170, 70, 0.1);
+    // backdrop-filter: blur(15px);
+    // padding: 1rem;
+    z-index: 10000;
+    padding: 0 1.5rem;
+    // background-color: #f3ede8;
+    background-color: white;
+
+    // Logo Section
+    .header__logo {
+        font-size: 0.9rem;
+        text-align: center;
+        text-transform: uppercase;
+        line-height: 1;
+
+        em {
+            font-size: 16px;
+            display: block;
+            color: var(--black200);
+        }
+    }
+    
+    // Navigation Section
+    .header__nav {
+        @media (max-width: 800px) {
+            display: none;
+            z-index: inherit;
+
+            &.show {
+                display: block;
+
+                ul {
+                    display: block;
+                    position: absolute;
+                    right: 0;
+                    top: 68px;
+                    background-color: rgba(116,99,99,0.1);
+                    backdrop-filter: blur(15px);
+                    z-index: 10000;
+                    min-width: 150px;
+                    padding: 20px 0;
+
+                    li {
+                        display: block;
+                        text-align: right;
+
+                        a {
+                            display: inline-block;
+                            padding: 10px;
+                        }
+                    }
+                }
+            }
+            &.show + .header__nav__mobile span::before {
+                width: 20px;
+            }
+            &.show + .header__nav__mobile span::after {
+                width: 20px;
+            }
+        }
+        
+        li {
+            display: inline;
+    
+            a {
+                text-transform: uppercase;
+                font-size: 14px;
+                padding: 14px;
+                position: relative;
+    
+                &::before {
+                    content: '';
+                    width: calc(100% - 28px);
+                    height: 1px;
+                    background-color: var(--black);
+                    position: absolute;
+                    left: 14px;
+                    bottom: 10px;
+                    transform: scaleX(0);
+                    transition: all 0.3s;
+                }
+                &:hover::before {
+                    transform: scaleX(1);
+                }
+            }
+        }
+    }
+    
+    // Mobile Navigation
+    .header__nav__mobile {
+        display: none;
+        width: 40px;
+        height: 40px;
+        cursor: pointer;
+
+        @media (max-width: 800px) {
+            display: block;
+        }
+
+        span {
+            display: block;
+            width: 40px;
+            height: 2px;
+            background-color: var(--black);
+            margin-top: 19px;
+            position: relative;
+
+            &::before,
+            &::after {
+                content: "";
+                width: 40px;
+                height: 2px;
+                background-color: var(--black);
+                position: absolute;
+                transition: width 0.3s;
+            }
+
+            &::before {
+                right: 0;
+                top: 6px;
+            }
+
+            &::after {
+                left: 0;
+                bottom: 6px;
+            }
+        }
+    }
+} 

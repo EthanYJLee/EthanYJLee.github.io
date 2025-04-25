@@ -1,0 +1,196 @@
+/* Contact.css */
+:root {
+    // --main-bg: #faf5f2;
+    // --main-pink: #fa8072;
+    // --main-pink-dark: #f77b7b;
+    --input-border: #3b3b3b;
+    // --title-font: 'Pretendard', 'Noto Sans KR', sans-serif;
+  }
+  
+  body {
+    background: var(--main-bg);
+  }
+  // Title Section
+  .contact__title {
+    top: 80px;
+    left: 0;
+    width: 70%;
+    height: 5vw;
+    font-size: 3vw;
+    font-weight: 500;
+    line-height: 1.6;
+    font-family: var(--mainEng-font);
+    text-transform: uppercase;
+    color: var(--black100);
+    border-bottom: 0.4vw solid var(--black100);
+    margin-bottom: 40px;
+
+    @media (max-width: 800px) { 
+        width: 100%;
+        margin-bottom: 10vw;
+        font-size: 30px;
+        height: auto;
+        top: 68px;
+        z-index: 1000;
+        background-color: var(--mainBg-color);
+    }
+
+    em {
+        font-size: 2rem;
+        font-weight: 400;
+        line-height: 2;
+        padding: 1rem;
+    }
+}
+  .contact-section {
+    // width: 100vw;
+    min-height: 100vh;
+    background: var(--main-bg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .contact-container {
+    display: flex;
+    gap: 64px;
+    background: var(--main-bg);
+    border-radius: 12px;
+    // max-width: 1050px;
+    // width: 90%;
+    padding: 40px 20px 40px 20px;
+    box-sizing: border-box;
+    box-shadow: none;
+  }
+  
+  .contact-left {
+    flex: 1;
+    min-width: 280px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+  .contact-right {
+    flex: 1;
+    min-width: 280px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+  
+  .contact-title {
+    font-family: var(--title-font);
+    font-size: 2.3rem;
+    font-weight: 700;
+    color: var(--main-pink-dark);
+    margin-bottom: 18px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  
+  .contact-title .emoji {
+    font-size: 1.6rem;
+    margin-left: 6px;
+    background: linear-gradient(90deg, #fa8072 10%, #fad0c4 100%);
+    border-radius: 8px;
+    padding: 2px 10px 2px 2px;
+    box-shadow: 0 4px 18px 0 #fa807230;
+  }
+  
+  .contact-desc {
+    font-size: 1.13rem;
+    color: #222;
+    margin-bottom: 36px;
+    line-height: 1.7;
+    font-family: var(--title-font);
+  }
+  
+  .contact-virtual {
+    font-style: italic;
+    font-size: 0.97em;
+    color: #888;
+  }
+  
+  .contact-socials {
+    display: flex;
+    gap: 48px;
+    margin-top: 28px;
+  }
+  
+  .contact-socials a {
+    color: var(--main-pink);
+    font-size: 2.3rem;
+    transition: color 0.2s;
+  }
+  
+  .contact-socials a:hover {
+    color: var(--main-pink-dark);
+  }
+  
+  .contact-form {
+    flex: 1;
+    min-width: 340px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    justify-content: flex-start;
+  }
+  
+  .contact-form input,
+  .contact-form textarea {
+    padding: 18px;
+    border: 2px solid var(--input-border);
+    border-radius: 9px;
+    font-size: 1.08rem;
+    outline: none;
+    background: #fff;
+    font-family: var(--title-font);
+    color: #333;
+    transition: border 0.2s;
+  }
+  
+//   .contact-form input:focus,
+//   .contact-form textarea:focus {
+//     border: 2px solid var(--main-pink-dark);
+//   }
+  
+  .contact-form textarea {
+    resize: none;
+  }
+  
+  .contact-form button {
+    background: var(--main-pink);
+    color: #fff;
+    font-weight: 600;
+    font-size: 1.13rem;
+    padding: 16px 0;
+    border: none;
+    border-radius: 8px;
+    margin-top: 8px;
+    cursor: pointer;
+    transition: background 0.2s;
+    font-family: var(--title-font);
+  }
+  
+//   .contact-form button:hover {
+//     background: var(--main-pink-dark);
+//   }
+  
+  @media (max-width: 900px) {
+    .contact-container {
+      flex-direction: column;
+      gap: 32px;
+      padding: 32px 10px;
+      align-items: center;
+    }
+    .contact-form, .contact-left {
+      min-width: 0;
+      width: 100%;
+    }
+    .contact-socials {
+      gap: 28px;
+    }
+  }
+  
