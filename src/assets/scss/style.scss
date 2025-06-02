@@ -2,17 +2,15 @@
 
 // setting
 @import "setting/fonts";
-@import "setting/vars";
 @import "setting/reset";
+@import "setting/vars";
 @import "setting/mixin";
 
 // section
 @import "section/header";
 @import "section/intro";
-// @import "section/skill";
-@import "section/work";
 @import "section/tech";
+@import "section/career";
+@import "section/work";
 @import "section/contact";
-// @import "section/port";
-// @import "section/contact";
-// @import "section/footer";
+@import "section/footer";

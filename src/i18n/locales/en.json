@@ -1,0 +1,50 @@
+{
+  "header": {
+    "intro": "intro >",
+    "tech": "tech >",
+    "career": "career >",
+    "project": "project >",
+    "work": "work >",
+    "contact": "contact >"
+  },
+  "intro": {
+    "title": "About me",
+    "desc": ["Hello", "Nice to meet you", "Welcome"]
+  },
+  "tech": {
+    "title": "Tech Stack",
+    "categories": {
+      "backend": "Backend",
+      "frontend": "Frontend",
+      "db": "DB",
+      "server": "Server / Deployment",
+      "os": "OS",
+      "tools": "Tools"
+    }
+  },
+  "career": {
+    "title": "Career",
+    "education": "Education",
+    "certifications": "Certifications"
+  },
+  "work": {
+    "title": "Project",
+    "viewProject": "View Project",
+    "viewCode": "View Code"
+  },
+  "contact": {
+    "title": "Contact",
+    "name": "Name",
+    "email": "Email",
+    "message": "Message",
+    "send": "Send"
+  },
+  "footer": {
+    "desc": "Developer who enjoys communication and collaboration",
+    "copyright": "© 2024 Portfolio"
+  },
+  "language": {
+    "en": "English",
+    "ko": "Korean"
+  }
+}

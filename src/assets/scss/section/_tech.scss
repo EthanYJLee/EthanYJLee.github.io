@@ -5,8 +5,13 @@
 
 // Tech Inner Container
 .tech__inner {
-    width: 100%;
-    padding: 16px;
+    padding: 0 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+    position: relative;
+    // display: flex;
+    flex-direction: column;
+    padding-bottom: 30px;
 
     // Title Section
     .tech__title {

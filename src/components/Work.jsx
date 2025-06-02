@@ -1,90 +1,188 @@
-import React from "react";
-
-import Container from "react-bootstrap/Container";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
-
+import React, { useState, useEffect } from "react";
 import { siteText } from "../constants";
+import { useTranslation } from 'react-i18next';
 
-let imgArray = ["images/twomore.png", "", "", ""];
 const Work = () => {
-  return (
-    <section id="site">
-      <div className="site__inner">
-        <h2 className="site__title">
-          <strong>Work Experience</strong>
-        </h2>
-        <div className="site__wrap">
-          {siteText.map((site, key) => (
-            <article className={`site__item s${key + 1}`} key={key}>
-              <div className="overlay">
-                <div className="overlay-title">{site.title}</div>
-                <div className="overlay-content">
-                  <strong>
-                    {site.info[0]}
-                    {/* &lt;br /&gt; */}
-                    <br />
-                    {site.info[1]}
-                  </strong>
-                </div>
-                <div className="btn-row">
-                  {site.btn.map((btnText, i) => (
-                    <button className="overlay-button">{btnText.text}</button>
-                  ))}
-                </div>
-              </div>
+  const { t } = useTranslation();
+  const [activeIndex, setActiveIndex] = useState(0);
+  const [isMobile, setIsMobile] = useState(false);
+  
+  useEffect(() => {
+    const checkScreenSize = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+    
+    checkScreenSize();
+    window.addEventListener("resize", checkScreenSize);
+    
+    return () => {
+      window.removeEventListener("resize", checkScreenSize);
+    };
+  }, []);
+  
+  const handleNext = () => {
+    setActiveIndex((prev) => (prev + 1) % siteText.length);
+  };
+  
+  const handlePrev = () => {
+    setActiveIndex((prev) => (prev - 1 + siteText.length) % siteText.length);
+  };
+  
+  const handleDotClick = (index) => {
+    setActiveIndex(index);
+  };
 
-              <span className="num"> {key + 1} |</span>
+  // 스타일 객체 정의 (CSS에서 관리하므로 최소한으로 유지)
+  const articleStyle = {
+    display: isMobile ? (activeIndex === activeIndex ? 'flex' : 'none') : 'flex',
+    flexDirection: isMobile ? 'column' : 'row'
+  };
+  
+  const imageStyle = {
+    maxWidth: '100%',
+    height: 'auto',
+    margin: isMobile ? '0 auto' : '0'
+  };
+  
+  return (
+    <section id="work">
+      <div className="work__inner">
+        <h2 className="work__title">
+          <strong>{t('work.title')}</strong>
+        </h2>
+        
+        {isMobile && (
+          <div className="project-navigation">
+            <button className="nav-button prev" onClick={handlePrev}>
+              &lt;
+            </button>
+            <div className="indicator">
+              {siteText.map((_, index) => (
+                <span 
+                  key={index}
+                  className={`dot ${index === activeIndex ? 'active' : ''}`}
+                  onClick={() => handleDotClick(index)}
+                />
+              ))}
+            </div>
+            <button className="nav-button next" onClick={handleNext}>
+              &gt;
+            </button>
+          </div>
+        )}
+
+        <div className="work__wrap">
+          {siteText.map((site, key) => (
+            <article 
+              className={`work__item s${key + 1}`} 
+              key={key}
+              style={{
+                display: isMobile ? (key === activeIndex ? 'flex' : 'none') : 'flex',
+                flexDirection: isMobile ? 'column' : 'row'
+              }}
+            >
+              {/* <span className="num">{key + 1} |</span> */}
 
               {key % 2 === 0 ? (
                 <>
                   <div className="text-section">
                     <h3 className="title">{site.title}</h3>
-                    <div className="text" style={{ textAlign: "left" }}>
-                      {/* <div>{site.text[0]}</div>
-                      <div>{site.text[1]}</div>
-                      <div>{site.text[2]}</div> */}
+                    <div className="text" style={{ textAlign: isMobile ? "center" : "left" }}>
+                      <div>{site.info[0]}</div>
+                      <div>{site.info[1]}</div>
+                    </div>
+                    <div className="tech-tags">
+                      {site.info[2].split(',').map((tech, i) => (
+                        <span key={i} className="tech-tag">{tech.trim()}</span>
+                      ))}
+                    </div>
+                    <div className="btn">
+                      {site.btn.map((btnText, i) => (
+                        <a 
+                          key={i} 
+                          href={btnText.link || "#"}
+                          target="_blank" 
+                          rel="noopener noreferrer"
+                        >
+                          {i === 0 ? t('work.viewProject') : t('work.viewCode')}
+                        </a>
+                      ))}
                     </div>
                   </div>
                   <div className="image-section">
-                    <img src={imgArray[key]} alt={site.title} />
+                    {site.img ? (
+                      <img 
+                        src={site.img} 
+                        alt={site.title} 
+                        loading="lazy" 
+                        style={imageStyle}
+                      />
+                    ) : (
+                      <div className="placeholder">
+                        <span>이미지 준비 중</span>
+                      </div>
+                    )}
                   </div>
                 </>
               ) : (
                 <>
                   <div className="image-section">
-                    <p>여기에 이미지 내용을 넣습니다.</p>
+                    {site.img ? (
+                      <img 
+                        src={site.img} 
+                        alt={site.title} 
+                        loading="lazy" 
+                        style={imageStyle}
+                      />
+                    ) : (
+                      <div className="placeholder">
+                        <span>이미지 준비 중</span>
+                      </div>
+                    )}
                   </div>
                   <div className="text-section">
                     <h3 className="title">{site.title}</h3>
-                    <div className="text" style={{ textAlign: "right" }}>
-                      {/* <div>{site.text[0]}</div>
-                      <div>{site.text[1]}</div>
-                      <div>{site.text[2]}</div> */}
+                    <div className="text" style={{ textAlign: isMobile ? "center" : "right" }}>
+                      <div>{site.info[0]}</div>
+                      <div>{site.info[1]}</div>
+                    </div>
+                    <div className="tech-tags">
+                      {site.info[2].split(',').map((tech, i) => (
+                        <span key={i} className="tech-tag">{tech.trim()}</span>
+                      ))}
+                    </div>
+                    <div className="btn">
+                      {site.btn.map((btnText, i) => (
+                        <a 
+                          key={i} 
+                          href={btnText.link || "#"}
+                          target="_blank" 
+                          rel="noopener noreferrer"
+                        >
+                          {i === 0 ? t('work.viewProject') : t('work.viewCode')}
+                        </a>
+                      ))}
                     </div>
                   </div>
                 </>
               )}
-
-              {/* <div className="text">
-                <div>{site.text[0]}</div>
-                <div>{site.text[1]}</div>
-                <div>{site.text[2]}</div>
-              </div>
-              <h3 className="title">{site.title}</h3>
-              <div className="btn">
-                <a href={site.code}>code</a>
-                <a href={site.view}>view</a>
-              </div>
-              */}
-              {/* <div className="info">
-                <span>{site.info[0]}</span>
-                <span>{site.info[1]}</span>
-                <span>{site.info[2]}</span>
-              </div> */}
             </article>
           ))}
         </div>
+        
+        {/* {isMobile && (
+          <div className="mobile-navigation" style={{ marginTop: '10px' }}>
+            <button className="mobile-nav-button prev" onClick={handlePrev}>
+              &lt; 이전
+            </button>
+            <div className="current-project">
+              {activeIndex + 1} / {siteText.length}
+            </div>
+            <button className="mobile-nav-button next" onClick={handleNext}>
+              다음 &gt;
+            </button>
+          </div>
+        )} */}
       </div>
     </section>
   );

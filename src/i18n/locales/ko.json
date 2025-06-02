@@ -1,0 +1,50 @@
+{
+  "header": {
+    "intro": "소개 >",
+    "tech": "기술 >",
+    "career": "경력 >",
+    "project": "프로젝트 >",
+    "work": "프로젝트 >",
+    "contact": "연락처 >"
+  },
+  "intro": {
+    "title": "자기소개",
+    "desc": ["안녕하세요", "반갑습니다", "환영합니다"]
+  },
+  "tech": {
+    "title": "기술 스택",
+    "categories": {
+      "backend": "백엔드",
+      "frontend": "프론트엔드",
+      "db": "데이터베이스",
+      "server": "서버/배포",
+      "os": "운영체제",
+      "tools": "개발도구"
+    }
+  },
+  "career": {
+    "title": "경력 사항",
+    "education": "학력",
+    "certifications": "자격증"
+  },
+  "work": {
+    "title": "프로젝트",
+    "viewProject": "프로젝트 보기",
+    "viewCode": "코드 보기"
+  },
+  "contact": {
+    "title": "연락처",
+    "name": "이름",
+    "email": "이메일",
+    "message": "메시지",
+    "send": "보내기"
+  },
+  "footer": {
+    "desc": "소통과 협업을 즐기는 개발자",
+    "copyright": "© 2024 포트폴리오"
+  },
+  "language": {
+    "en": "영어",
+    "ko": "한국어"
+  }
+}
