@@ -24,13 +24,149 @@
   },
   "career": {
     "title": "경력 사항",
-    "education": "학력",
-    "certifications": "자격증"
+    "experience": {
+        "title": "이력",
+        "lists": [
+          {
+            "institution": "세종대학교",
+            "degree": "호텔경영학 학사",
+            "period": "2014.03 - 2022.02"
+          },
+          {
+            "institution": "빅데이터 분석 & 추천시스템 개발자 양성과정",
+            "degree": "K-Digital Training 과정",
+            "period": "2023.01 - 2023.06"
+          },
+          {
+            "institution": "MEDI-IoT",
+            "degree": "풀스택 개발자",
+            "period": "2023.08 - 2024.12"
+          }
+        ]
+    },
+    "certifications": {
+        "title": "자격증",
+        "lists": [
+            {
+                "name": "ADsP: 데이터분석준전문가",
+                "issuer": "한국데이터산업진흥원",
+                "date": "2023.03"
+              },
+              {
+                "name": "SQLD: SQL개발자",
+                "issuer": "한국데이터산업진흥원",
+                "date": "2025.04"
+              }
+        ]
+    }
   },
   "work": {
     "title": "프로젝트",
     "viewProject": "프로젝트 보기",
-    "viewCode": "코드 보기"
+    "viewCode": "코드 보기",
+    "category": {
+      "all": "전체 보기",
+      "personal": "개인 프로젝트",
+      "company": "회사 프로젝트"
+    },
+    "tag": {
+      "personal": "개인",
+      "company": "회사"
+    },
+    "lists": [
+      {
+        "id": "twomore",
+        "text": ["만들기", "사이트 준수", "웹표준"],
+        "title": "TwoMore",
+        "category": "personal",
+        "info": [
+          "운동 루틴 관리를 더 쉽고 체계적으로 만들어주는 모바일 운동 기록 앱입니다.",
+          "각 운동별 세트 수, 반복 횟수, 무게를 실시간으로 기록할 수 있으며, 개인 루틴을 저장하고 이력을 관리할 수 있습니다.",
+          "사용 기술: Flutter, Spring Boot, MariaDB"
+        ],
+        "stack": ["Flutter", "Spring Boot", "MariaDB"],
+        "img": "images/twomore.png",
+        "code": "https://github.com/webstoryboy/port2023-vite",
+        "view": "https://port2023-vite.netlify.app",
+        "btn": [
+          { "text": "앱스토어", "link": "https://apps.apple.com/kr/app/%ED%88%AC%EB%AA%A8%EC%96%B4-twomore-%EC%9A%B4%EB%8F%99-%EA%B8%B0%EB%A1%9D/id6677026088?l=en-GB" }
+        ]
+      },
+      {
+        "id": "konnect",
+        "text": ["만들기", "사이트 준수", "react.js"],
+        "title": "Konnect",
+        "category": "personal",
+        "info": [
+          "한국 여행자를 위한 종합 여행 도우미 애플리케이션입니다.",
+          "여행 일정 계획, 관광지 정보 제공, 경로 안내 등 다양한 기능을 제공합니다.",
+          "사용 기술: React, Express, Flask, MongoDB, OpenAI, OSRM"
+        ],
+        "stack": ["React", "Express", "Flask", "MongoDB", "OpenAI", "OSRM"],
+        "img": "images/konnect.png",
+        "code": "https://github.com/username/konnect",
+        "view": "https://konnect-app.netlify.app",
+        "btn": [
+          { "text": "데모", "link": "http://www.konnect.guru/" },
+          { "text": "Github", "link": "https://github.com/EthanYJLee/konnect-client" }
+        ]
+      },
+      {
+        "id": "agingloc",
+        "text": ["만들기", "사이트 준수", "next.js"],
+        "title": "AgingLOC",
+        "category": "company",
+        "info": [
+          "사이트 코딩",
+          "제작 기간: 2일"
+        ],
+        "stack": ["Flutter", "Spring Boot", "Meteor","MariaDB","MongoDB"],
+        "img": "images/agingloc.png",
+        "code": "https://github.com/webstoryboy/port2023-next",
+        "view": "https://port2023-next.netlify.app",
+        "btn": [
+          { "text": "앱스토어", "link": "https://apps.apple.com/kr/app/%EC%97%90%EC%9D%B4%EC%A7%95%EB%9D%BD-agingloc/id6448716081?l=en-GB" },
+          { "text": "플레이스토어", "link": "https://play.google.com/store/apps/details?id=com.mediiot.agingloc&pli=1" }
+        ]
+      },
+      {
+        "id": "roaddetector",
+        "text": ["만들기", "사이트 준수", "vue.js"],
+        "title": "Road Detector",
+        "category": "company",
+        "info": [
+          "사이트 코딩",
+          "제작 기간: 2일"
+        ],
+        "stack": ["Flutter", "FastAPI", "MariaDB"],
+        "img": "",
+        "code": "https://github.com/webstoryboy/port2023-vue",
+        "view": "https://port2023-vue.netlify.app",
+        "btn": [
+          { "text": "스토어", "link": "" },
+          { "text": "Github", "link": "" }
+        ]
+      },
+      {
+        "id": "medieye",
+        "text": ["make", "site compliant with", "vue.js"],
+        "title": "MEDI-EYE",
+        "category": "company",
+        "info": [
+          "Site coding",
+          "Production period: two days",
+          "Tech stack: HTML5/CSS3, Scss Variable, vue"
+        ],
+        "stack": ["HTML5/CSS3", "Scss Variable", "vue"],
+        "img": "",
+        "code": "https://github.com/webstoryboy/port2023-vue",
+        "view": "https://port2023-vue.netlify.app",
+        "btn": [
+          { "text": "Store", "link": "" },
+          { "text": "Github", "link": "" }
+        ]
+      }
+    ]
   },
   "contact": {
     "title": "연락처",

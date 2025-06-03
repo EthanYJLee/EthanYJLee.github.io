@@ -4,6 +4,8 @@ import { useTranslation } from 'react-i18next';
 
 const Career = () => {
   const { t } = useTranslation();
+  const experienceData = t('career.experience.lists', { returnObjects: true });
+  const certificationData = t('career.certifications.lists', { returnObjects: true });
   
   return (
     <section id="career">
@@ -14,9 +16,9 @@ const Career = () => {
         
         <div className="career__container">
           <div className="education__column">
-            <h3 className="column__title">{t('career.education')}</h3>
+            <h3 className="column__title">{t('career.experience.title')}</h3>
             <div className="timeline">
-              {careerData.education.map((item, index) => (
+              {experienceData.map((item, index) => (
                 <div className="timeline__item" key={index}>
                   <div className="timeline__dot"></div>
                   <div className="timeline__content">
@@ -33,9 +35,9 @@ const Career = () => {
           </div>
           
           <div className="certification__column">
-            <h3 className="column__title">{t('career.certifications')}</h3>
+            <h3 className="column__title">{t('career.certifications.title')}</h3>
             <div className="timeline">
-              {careerData.certifications.map((item, index) => (
+              {certificationData.map((item, index) => (
                 <div className="timeline__item" key={index}>
                   <div className="timeline__dot"></div>
                   <div className="timeline__content">

@@ -1,11 +1,20 @@
 import React, { useState, useEffect } from "react";
-import { siteText } from "../constants";
 import { useTranslation } from 'react-i18next';
+import { motion, AnimatePresence } from "framer-motion";
 
 const Work = () => {
   const { t } = useTranslation();
   const [activeIndex, setActiveIndex] = useState(0);
   const [isMobile, setIsMobile] = useState(false);
+  const [activeCategory, setActiveCategory] = useState('all');
+  
+  // i18n을 통해 프로젝트 데이터 가져오기
+  const projectsData = t('work.lists', { returnObjects: true });
+  
+  // 카테고리별 프로젝트 필터링
+  const filteredProjects = activeCategory === 'all' 
+    ? projectsData
+    : projectsData.filter(project => project.category === activeCategory);
   
   useEffect(() => {
     const checkScreenSize = () => {
@@ -20,12 +29,17 @@ const Work = () => {
     };
   }, []);
   
+  // 카테고리 변경 시 인덱스 초기화
+  useEffect(() => {
+    setActiveIndex(0);
+  }, [activeCategory]);
+  
   const handleNext = () => {
-    setActiveIndex((prev) => (prev + 1) % siteText.length);
+    setActiveIndex((prev) => (prev + 1) % filteredProjects.length);
   };
   
   const handlePrev = () => {
-    setActiveIndex((prev) => (prev - 1 + siteText.length) % siteText.length);
+    setActiveIndex((prev) => (prev - 1 + filteredProjects.length) % filteredProjects.length);
   };
   
   const handleDotClick = (index) => {
@@ -44,6 +58,23 @@ const Work = () => {
     margin: isMobile ? '0 auto' : '0'
   };
   
+  const categoryButtonVariants = {
+    active: {
+      backgroundColor: 'var(--primary-color)',
+      color: '#fff',
+      scale: 1.05,
+      boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
+      transition: { duration: 0.3 }
+    },
+    inactive: {
+      backgroundColor: 'var(--neutral-100)',
+      color: 'var(--neutral-700)',
+      scale: 1,
+      boxShadow: 'none',
+      transition: { duration: 0.3 }
+    }
+  };
+  
   return (
     <section id="work">
       <div className="work__inner">
@@ -51,13 +82,47 @@ const Work = () => {
           <strong>{t('work.title')}</strong>
         </h2>
         
-        {isMobile && (
+        {/* 카테고리 탭 */}
+        <div className="work__categories">
+          <motion.button
+            className="category-button"
+            variants={categoryButtonVariants}
+            animate={activeCategory === 'all' ? 'active' : 'inactive'}
+            onClick={() => setActiveCategory('all')}
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            {t('work.category.all')}
+          </motion.button>
+          <motion.button
+            className="category-button"
+            variants={categoryButtonVariants}
+            animate={activeCategory === 'personal' ? 'active' : 'inactive'}
+            onClick={() => setActiveCategory('personal')}
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            {t('work.category.personal')}
+          </motion.button>
+          <motion.button
+            className="category-button"
+            variants={categoryButtonVariants}
+            animate={activeCategory === 'company' ? 'active' : 'inactive'}
+            onClick={() => setActiveCategory('company')}
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            {t('work.category.company')}
+          </motion.button>
+        </div>
+        
+        {isMobile && filteredProjects.length > 0 && (
           <div className="project-navigation">
             <button className="nav-button prev" onClick={handlePrev}>
               &lt;
             </button>
             <div className="indicator">
-              {siteText.map((_, index) => (
+              {filteredProjects.map((_, index) => (
                 <span 
                   key={index}
                   className={`dot ${index === activeIndex ? 'active' : ''}`}
@@ -71,118 +136,126 @@ const Work = () => {
           </div>
         )}
 
-        <div className="work__wrap">
-          {siteText.map((site, key) => (
-            <article 
-              className={`work__item s${key + 1}`} 
-              key={key}
-              style={{
-                display: isMobile ? (key === activeIndex ? 'flex' : 'none') : 'flex',
-                flexDirection: isMobile ? 'column' : 'row'
-              }}
-            >
-              {/* <span className="num">{key + 1} |</span> */}
+        {filteredProjects.length > 0 ? (
+          <div className="work__wrap">
+            {filteredProjects.map((project, key) => (
+              <article 
+                className={`work__item s${key + 1}`} 
+                key={key}
+                style={{
+                  display: isMobile ? (key === activeIndex ? 'flex' : 'none') : 'flex',
+                  flexDirection: isMobile ? 'column' : 'row'
+                }}
+              >
+                {/* <span className="num">{key + 1} |</span> */}
 
-              {key % 2 === 0 ? (
-                <>
-                  <div className="text-section">
-                    <h3 className="title">{site.title}</h3>
-                    <div className="text" style={{ textAlign: isMobile ? "center" : "left" }}>
-                      <div>{site.info[0]}</div>
-                      <div>{site.info[1]}</div>
-                    </div>
-                    <div className="tech-tags">
-                      {site.info[2].split(',').map((tech, i) => (
-                        <span key={i} className="tech-tag">{tech.trim()}</span>
-                      ))}
-                    </div>
-                    <div className="btn">
-                      {site.btn.map((btnText, i) => (
-                        <a 
-                          key={i} 
-                          href={btnText.link || "#"}
-                          target="_blank" 
-                          rel="noopener noreferrer"
-                        >
-                          {i === 0 ? t('work.viewProject') : t('work.viewCode')}
-                        </a>
-                      ))}
-                    </div>
-                  </div>
-                  <div className="image-section">
-                    {site.img ? (
-                      <img 
-                        src={site.img} 
-                        alt={site.title} 
-                        loading="lazy" 
-                        style={imageStyle}
-                      />
-                    ) : (
-                      <div className="placeholder">
-                        <span>이미지 준비 중</span>
+                {key % 2 === 0 ? (
+                  <>
+                    <div className="text-section">
+                      <div className="title-row">
+                        <h3 className="title">{project.title}</h3>
+                        <span className={`project-tag ${project.category}`}>
+                          {t(`work.tag.${project.category}`)}
+                        </span>
                       </div>
-                    )}
-                  </div>
-                </>
-              ) : (
-                <>
-                  <div className="image-section">
-                    {site.img ? (
-                      <img 
-                        src={site.img} 
-                        alt={site.title} 
-                        loading="lazy" 
-                        style={imageStyle}
-                      />
-                    ) : (
-                      <div className="placeholder">
-                        <span>이미지 준비 중</span>
+                      <div className="text" style={{ textAlign: isMobile ? "center" : "left" }}>
+                        <div>{project.info[0]}</div>
+                        <div>{project.info[1]}</div>
                       </div>
-                    )}
-                  </div>
-                  <div className="text-section">
-                    <h3 className="title">{site.title}</h3>
-                    <div className="text" style={{ textAlign: isMobile ? "center" : "right" }}>
-                      <div>{site.info[0]}</div>
-                      <div>{site.info[1]}</div>
+                      <div className="tech-tags">
+                        {/* {project.info[2].split(',').map((tech, i) => (
+                          <span key={i} className="tech-tag">{tech.trim()}</span>
+                        ))} */}
+                        {project.stack.map((s,i) => (
+                          <span key={i} className="tech-tag">{s}</span>
+                        ))}
+                      </div>
+                      <div className="btn">
+                        {project.btn.map((btnInfo, i) => (
+                          <a 
+                            key={i} 
+                            href={btnInfo.link || "#"}
+                            target="_blank" 
+                            rel="noopener noreferrer"
+                          >
+                            {btnInfo.text}
+                          </a>
+                        ))}
+                      </div>
                     </div>
-                    <div className="tech-tags">
-                      {site.info[2].split(',').map((tech, i) => (
-                        <span key={i} className="tech-tag">{tech.trim()}</span>
-                      ))}
+                    <div className="image-section">
+                      {project.img ? (
+                        <img 
+                          src={project.img} 
+                          alt={project.title} 
+                          loading="lazy" 
+                          style={imageStyle}
+                        />
+                      ) : (
+                        <div className="placeholder">
+                          <span>이미지 준비 중</span>
+                        </div>
+                      )}
                     </div>
-                    <div className="btn">
-                      {site.btn.map((btnText, i) => (
-                        <a 
-                          key={i} 
-                          href={btnText.link || "#"}
-                          target="_blank" 
-                          rel="noopener noreferrer"
-                        >
-                          {i === 0 ? t('work.viewProject') : t('work.viewCode')}
-                        </a>
-                      ))}
+                  </>
+                ) : (
+                  <>
+                    <div className="image-section">
+                      {project.img ? (
+                        <img 
+                          src={project.img} 
+                          alt={project.title} 
+                          loading="lazy" 
+                          style={imageStyle}
+                        />
+                      ) : (
+                        <div className="placeholder">
+                          <span>이미지 준비 중</span>
+                        </div>
+                      )}
                     </div>
-                  </div>
-                </>
-              )}
-            </article>
-          ))}
-        </div>
-        
-        {/* {isMobile && (
-          <div className="mobile-navigation" style={{ marginTop: '10px' }}>
-            <button className="mobile-nav-button prev" onClick={handlePrev}>
-              &lt; 이전
-            </button>
-            <div className="current-project">
-              {activeIndex + 1} / {siteText.length}
-            </div>
-            <button className="mobile-nav-button next" onClick={handleNext}>
-              다음 &gt;
-            </button>
+                    <div className="text-section">
+                      <div className="title-row">
+                        <h3 className="title">{project.title}</h3>
+                        <span className={`project-tag ${project.category}`}>
+                          {t(`work.tag.${project.category}`)}
+                        </span>
+                      </div>
+                      <div className="text" style={{ textAlign: isMobile ? "center" : "right" }}>
+                        <div>{project.info[0]}</div>
+                        <div>{project.info[1]}</div>
+                      </div>
+                      <div className="tech-tags">
+                        {/* {project.info[2].split(',').map((tech, i) => (
+                          <span key={i} className="tech-tag">{tech.trim()}</span>
+                        ))} */}
+                        {project.stack.map((s,i) => (
+                          <span key={i} className="tech-tag">{s}</span>
+                        ))}
+                      </div>
+                      <div className="btn">
+                        {project.btn.map((btnInfo, i) => (
+                          <a 
+                            key={i} 
+                            href={btnInfo.link || "#"}
+                            target="_blank" 
+                            rel="noopener noreferrer"
+                          >
+                            {btnInfo.text}
+                          </a>
+                        ))}
+                      </div>
+                    </div>
+                  </>
+                )}
+              </article>
+            ))}
           </div>
-        )} */}
+        ) : (
+          <div className="no-projects">
+            <p>해당 카테고리에 프로젝트가 없습니다.</p>
+          </div>
+        )}
       </div>
     </section>
   );

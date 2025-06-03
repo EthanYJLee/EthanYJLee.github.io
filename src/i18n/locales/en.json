@@ -24,13 +24,150 @@
   },
   "career": {
     "title": "Career",
-    "education": "Education",
-    "certifications": "Certifications"
+    "experience": {
+        "title": "Experience",
+        "lists": [
+          {
+            "institution": "Sejong University",
+            "degree": "Bachelor of Hotel Management",
+            "period": "2014.03 - 2022.02"
+          },
+          {
+            "institution": "Big Data Analysis & Recommendation System Developer",
+            "degree": "K-Digital Training",
+            "period": "2023.01 - 2023.06"
+          },
+          {
+            "institution": "MEDI-IoT",
+            "degree": "Full Stack Developer",
+            "period": "2023.08 - 2024.12"
+          }
+        ]
+    },
+    "certifications": {
+        "title": "Certifications",
+        "lists": [
+          {
+            "name": "ADsP: Advanced Data Analytics Semi-Professional",
+            "issuer": "Korea Data Agency",
+            "date": "2023.03"
+          },
+          {
+            "name": "SQLD: Structured Query Language Developer",
+            "issuer": "Korea Data Agency",
+            "date": "2025.04"
+          }
+
+        ]
+    }
   },
   "work": {
     "title": "Project",
     "viewProject": "View Project",
-    "viewCode": "View Code"
+    "viewCode": "View Code",
+    "category": {
+      "all": "All Projects",
+      "personal": "Personal Projects",
+      "company": "Company Projects"
+    },
+    "tag": {
+      "personal": "Personal",
+      "company": "Company"
+    },
+    "lists": [
+      {
+        "id": "twomore",
+        "text": ["make", "site compliant with", "webstandard"],
+        "title": "TwoMore",
+        "category": "personal",
+        "info": [
+          "A mobile fitness tracking app that makes workout routine management easier and more systematic.",
+          "You can record sets, repetitions, and weights for each exercise in real-time, and save and manage personal routines and history."
+        ],
+        "stack": ["Flutter", "Spring Boot", "MariaDB"],
+        "img": "images/twomore.png",
+        "code": "https://github.com/webstoryboy/port2023-vite",
+        "view": "https://port2023-vite.netlify.app",
+        "btn": [
+          { "text": "App Store", "link": "https://apps.apple.com/kr/app/%ED%88%AC%EB%AA%A8%EC%96%B4-twomore-%EC%9A%B4%EB%8F%99-%EA%B8%B0%EB%A1%9D/id6677026088?l=en-GB" }
+        ]
+      },
+      {
+        "id": "konnect",
+        "text": ["make", "site compliant with", "react.js"],
+        "title": "Konnect",
+        "category": "personal",
+        "info": [
+          "A comprehensive assistant for foreigners who live and travel in Korea.",
+          "Provides various features such as travel itinerary planning, chatbot, and tourist information."
+        ],
+        "stack": ["React", "Express", "Flask", "MongoDB", "OpenAI", "OSRM"],
+        "img": "images/konnect.png",
+        "code": "https://github.com/username/konnect",
+        "view": "https://konnect-app.netlify.app",
+        "btn": [
+          { "text": "Demo", "link": "http://www.konnect.guru/" },
+          { "text": "Github", "link": "https://github.com/EthanYJLee/konnect-client" }
+        ]
+      },
+      {
+        "id": "agingloc",
+        "text": ["make", "site compliant with", "next.js"],
+        "title": "AgingLOC",
+        "category": "company",
+        "info": [
+          "AgingLOC is a platform that provides personalized healthcare services based on clinical evidence. 118 exercise guide videos and 168 combinations of exercise programs are provided by simple questionnaires, physical fitness tests, and adjusted by feedback.",
+          "Participated in deployment, maintenance, troble shooting, development of admin system for managing exercise programs."
+
+        ],
+        "stack": ["Flutter", "Spring Boot", "Meteor", "MariaDB", "MongoDB"],
+        "img": "images/agingloc.png",
+        "code": "https://github.com/webstoryboy/port2023-next",
+        "view": "https://port2023-next.netlify.app",
+        "btn": [
+          { "text": "App Store", "link": "https://apps.apple.com/kr/app/%EC%97%90%EC%9D%B4%EC%A7%95%EB%9D%BD-agingloc/id6448716081?l=en-GB" },
+          { "text": "Play Store", "link": "https://play.google.com/store/apps/details?id=com.mediiot.agingloc&pli=1" }
+        ]
+      },
+      {
+        "id": "roaddetector",
+        "text": ["make", "site compliant with", "vue.js"],
+        "title": "Road Detector",
+        "category": "company",
+        "info": [
+          "Site coding",
+          "Production period: two days"
+        ],
+        "stack": ["Flutter", "FastAPI", "MariaDB"],
+        "img": "",
+        "code": "https://github.com/webstoryboy/port2023-vue",
+        "view": "https://port2023-vue.netlify.app",
+        "btn": [
+          { "text": "Store", "link": "" },
+          { "text": "Github", "link": "" }
+        ]
+      },
+      {
+        "id": "medieye",
+        "text": ["make", "site compliant with", "vue.js"],
+        "title": "MEDI-EYE",
+        "category": "company",
+        "info": [
+          "Site coding",
+          "Production period: two days",
+          "Tech stack: HTML5/CSS3, Scss Variable, vue"
+        ],
+        "stack": ["HTML5/CSS3", "Scss Variable", "vue"],
+        "img": "",
+        "code": "https://github.com/webstoryboy/port2023-vue",
+        "view": "https://port2023-vue.netlify.app",
+        "btn": [
+          { "text": "Store", "link": "" },
+          { "text": "Github", "link": "" }
+        ]
+      }
+      
+    ]
   },
   "contact": {
     "title": "Contact",

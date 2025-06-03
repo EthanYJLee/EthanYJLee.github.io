@@ -4,17 +4,17 @@ import en from "./locales/en.json";
 import ko from "./locales/ko.json";
 
 const resources = {
-    en: { translation: en },
-    ko: { translation: ko }
-  };
-  
-  i18n.use(initReactI18next).init({
-    resources,
-    lng: localStorage.getItem("language") || "ko", // default language
-    fallbackLng: "ko",
-    interpolation: {
-      escapeValue: false,
-    },
-  });
-  
-  export default i18n;
+  en: { translation: en },
+  ko: { translation: ko },
+};
+
+i18n.use(initReactI18next).init({
+  resources,
+  lng: localStorage.getItem("language") || "en", // default language
+  fallbackLng: "en",
+  interpolation: {
+    escapeValue: false,
+  },
+});
+
+export default i18n;
