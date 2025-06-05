@@ -8,8 +8,8 @@
     "contact": "연락처 >"
   },
   "intro": {
-    "title": "자기소개",
-    "desc": ["안녕하세요", "반갑습니다", "환영합니다"]
+    "title": "About Me",
+    "desc": ["경영학 전공자로서 비즈니스 관점에서 문제를 바라보며, 스타트업에서의 개발 경험을 통해 백엔드, 프론트엔드 전반을 아우르는 실무 역량을 키웠습니다. 나아가 데이터를 기반으로 사용자 행동을 분석하고 서비스 개선에 활용하는 데 관심이 많으며, 개발뿐만 아니라 데이터 분석까지 가능한 문제 해결형 개발자를 지향합니다."]
   },
   "tech": {
     "title": "기술 스택",
@@ -76,13 +76,11 @@
     "lists": [
       {
         "id": "twomore",
-        "text": ["만들기", "사이트 준수", "웹표준"],
         "title": "TwoMore",
         "category": "personal",
         "info": [
           "운동 루틴 관리를 더 쉽고 체계적으로 만들어주는 모바일 운동 기록 앱입니다.",
-          "각 운동별 세트 수, 반복 횟수, 무게를 실시간으로 기록할 수 있으며, 개인 루틴을 저장하고 이력을 관리할 수 있습니다.",
-          "사용 기술: Flutter, Spring Boot, MariaDB"
+          "각 운동별 세트 수, 반복 횟수, 무게를 실시간으로 기록할 수 있으며, 개인 루틴을 저장하고 이력을 관리할 수 있습니다."
         ],
         "stack": ["Flutter", "Spring Boot", "MariaDB"],
         "img": "images/twomore.png",
@@ -94,13 +92,11 @@
       },
       {
         "id": "konnect",
-        "text": ["만들기", "사이트 준수", "react.js"],
         "title": "Konnect",
         "category": "personal",
         "info": [
           "한국 여행자를 위한 종합 여행 도우미 애플리케이션입니다.",
-          "여행 일정 계획, 관광지 정보 제공, 경로 안내 등 다양한 기능을 제공합니다.",
-          "사용 기술: React, Express, Flask, MongoDB, OpenAI, OSRM"
+          "여행 일정 계획, 관광지 정보 제공, 경로 안내 등 다양한 기능을 제공합니다."
         ],
         "stack": ["React", "Express", "Flask", "MongoDB", "OpenAI", "OSRM"],
         "img": "images/konnect.png",
@@ -113,12 +109,11 @@
       },
       {
         "id": "agingloc",
-        "text": ["만들기", "사이트 준수", "next.js"],
         "title": "AgingLOC",
         "category": "company",
         "info": [
-          "사이트 코딩",
-          "제작 기간: 2일"
+          "AgingLOC는 임상 근거 기반의 개인 맞춤형 헬스케어 서비스를 제공하는 플랫폼입니다. 간단한 설문과 체력 측정을 통해 118개의 운동 가이드 영상과 168가지의 운동 프로그램 조합을 추천하며, 피드백을 통해 맞춤 조정됩니다.",
+          "리팩토링, 유지보수, 트러블슈팅 및 운동 프로그램을 관리하는 관리자 시스템의 개발에 참여하였습니다."
         ],
         "stack": ["Flutter", "Spring Boot", "Meteor","MariaDB","MongoDB"],
         "img": "images/agingloc.png",
@@ -130,45 +125,40 @@
         ]
       },
       {
-        "id": "roaddetector",
-        "text": ["만들기", "사이트 준수", "vue.js"],
-        "title": "Road Detector",
+        "id": "crackdetector",
+        "title": "Crack Detector",
         "category": "company",
         "info": [
-          "사이트 코딩",
-          "제작 기간: 2일"
+          "카메라로 도로를 촬영하면 프레임 단위로 이미지를 분석하여 YOLO 모델로 도로의 균열이나 싱크홀을 인식하고, 바운딩 박스를 반환해 촬영 중인 스마트폰 화면에 실시간으로 표시하는 앱의 프로토타입을 개발했습니다."
         ],
         "stack": ["Flutter", "FastAPI", "MariaDB"],
         "img": "",
         "code": "https://github.com/webstoryboy/port2023-vue",
         "view": "https://port2023-vue.netlify.app",
         "btn": [
-          { "text": "스토어", "link": "" },
-          { "text": "Github", "link": "" }
+          
         ]
       },
       {
         "id": "medieye",
-        "text": ["make", "site compliant with", "vue.js"],
         "title": "MEDI-EYE",
         "category": "company",
         "info": [
-          "Site coding",
-          "Production period: two days",
-          "Tech stack: HTML5/CSS3, Scss Variable, vue"
+          "MEDI-EYE는 의사가 웹 브라우저를 통해 각 환자에게 특정한 파장의 조합을 처방할 수 있도록 해주는 디지털 헬스케어 시스템입니다. 환자는 스마트폰 앱을 통해 자신의 처방 정보를 편리하게 확인한 뒤, BLE(Bluetooth Low Energy)를 이용해 안질환 치료를 받을 수 있습니다.",
+          "설계 단계, 테스팅에 참여하고 서버 이전, 유지보수를 담당했습니다."
         ],
-        "stack": ["HTML5/CSS3", "Scss Variable", "vue"],
-        "img": "",
+        "stack": ["Android", "Spring Boot", "JSP", "PostgreSQL"],
+        "img": "images/medieye.png",
         "code": "https://github.com/webstoryboy/port2023-vue",
         "view": "https://port2023-vue.netlify.app",
         "btn": [
-          { "text": "Store", "link": "" },
-          { "text": "Github", "link": "" }
+          
         ]
       }
     ]
   },
   "contact": {
+    "desc": "새로운 기회나 협업에 대해 이야기하고 싶으시다면 언제든 연락해 주세요. 함께 멋진 프로젝트를 만들어갈 수 있기를 기대합니다.",
     "title": "연락처",
     "name": "이름",
     "email": "이메일",

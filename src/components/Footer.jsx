@@ -18,12 +18,12 @@ const Footer = () => {
             <div className="sns">
               <ul>
                 <li>
-                  <a href="https://github.com/" target="_blank" rel="noopener noreferrer">
+                  <a href="https://github.com/EthanYJLee" target="_blank" rel="noopener noreferrer">
                     GitHub
                   </a>
                 </li>
                 <li>
-                  <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">
+                  <a href="https://www.linkedin.com/in/%EC%98%81%EC%A7%84-%EC%9D%B4-260047275/" target="_blank" rel="noopener noreferrer">
                     LinkedIn
                   </a>
                 </li>
@@ -31,7 +31,7 @@ const Footer = () => {
             </div>
             <div className="contact">
               <ul>
-                <li>Email: developer@example.com</li>
+                <li>Email: lyj72011648@gmail.com</li>
                 <li>Location: Seoul, South Korea</li>
               </ul>
             </div>

@@ -1,12 +1,14 @@
 import React, { useState, useEffect } from "react";
 import { useTranslation } from 'react-i18next';
 import { motion, AnimatePresence } from "framer-motion";
+import CrackDetectorModal from "./CrackDetectorModal";
 
 const Work = () => {
   const { t } = useTranslation();
   const [activeIndex, setActiveIndex] = useState(0);
   const [isMobile, setIsMobile] = useState(false);
   const [activeCategory, setActiveCategory] = useState('all');
+  const [isCrackDetectorModalOpen, setIsCrackDetectorModalOpen] = useState(false);
   
   // i18n을 통해 프로젝트 데이터 가져오기
   const projectsData = t('work.lists', { returnObjects: true });
@@ -57,6 +59,13 @@ const Work = () => {
     height: 'auto',
     margin: isMobile ? '0 auto' : '0'
   };
+
+  const videoStyle = {
+    maxWidth: '100%',
+    height: 'auto',
+    margin: isMobile ? '0 auto' : '0',
+    borderRadius: '8px'
+  };
   
   const categoryButtonVariants = {
     active: {
@@ -72,6 +81,40 @@ const Work = () => {
       scale: 1,
       boxShadow: 'none',
       transition: { duration: 0.3 }
+    }
+  };
+
+  // 미디어 렌더링 함수
+  const renderMedia = (project) => {
+    if (project.id === 'crackdetector') {
+      return (
+        <video 
+          src="videos/crack_detector.mp4"
+          style={videoStyle}
+          controls
+          muted
+          loop
+          preload="metadata"
+          playsInline
+        >
+          Your browser does not support the video tag.
+        </video>
+      );
+    } else if (project.img) {
+      return (
+        <img 
+          src={project.img} 
+          alt={project.title} 
+          loading="lazy" 
+          style={imageStyle}
+        />
+      );
+    } else {
+      return (
+        <div className="placeholder">
+          <span>이미지 준비 중</span>
+        </div>
+      );
     }
   };
   
@@ -158,7 +201,7 @@ const Work = () => {
                           {t(`work.tag.${project.category}`)}
                         </span>
                       </div>
-                      <div className="text" style={{ textAlign: isMobile ? "center" : "left" }}>
+                      <div className="text" style={{ textAlign: isMobile ? "center" : "left", textWrap: "wrap !important"}}>
                         <div>{project.info[0]}</div>
                         <div>{project.info[1]}</div>
                       </div>
@@ -184,35 +227,13 @@ const Work = () => {
                       </div>
                     </div>
                     <div className="image-section">
-                      {project.img ? (
-                        <img 
-                          src={project.img} 
-                          alt={project.title} 
-                          loading="lazy" 
-                          style={imageStyle}
-                        />
-                      ) : (
-                        <div className="placeholder">
-                          <span>이미지 준비 중</span>
-                        </div>
-                      )}
+                      {renderMedia(project)}
                     </div>
                   </>
                 ) : (
                   <>
                     <div className="image-section">
-                      {project.img ? (
-                        <img 
-                          src={project.img} 
-                          alt={project.title} 
-                          loading="lazy" 
-                          style={imageStyle}
-                        />
-                      ) : (
-                        <div className="placeholder">
-                          <span>이미지 준비 중</span>
-                        </div>
-                      )}
+                      {renderMedia(project)}
                     </div>
                     <div className="text-section">
                       <div className="title-row">

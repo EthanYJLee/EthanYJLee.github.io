@@ -8,35 +8,20 @@ import { introText } from "../constants";
 
 const Intro = () => {
   const { t } = useTranslation();
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
   const isMobile = windowWidth <= 768;
   
   useEffect(() => {
-    const handleMouseMove = (e) => {
-      setMousePosition({ x: e.clientX, y: e.clientY });
-    };
-    
     const handleResize = () => {
       setWindowWidth(window.innerWidth);
     };
     
-    window.addEventListener("mousemove", handleMouseMove);
     window.addEventListener("resize", handleResize);
     
     return () => {
-      window.removeEventListener("mousemove", handleMouseMove);
       window.removeEventListener("resize", handleResize);
     };
   }, []);
-
-  const calculateOffset = (axis, strength = 20) => {
-    if (isMobile) return 0; // 모바일 환경에서는 오프셋을 적용하지 않음
-    
-    const center = axis === 'x' ? window.innerWidth / 2 : window.innerHeight / 2;
-    const position = axis === 'x' ? mousePosition.x : mousePosition.y;
-    return (position - center) / strength;
-  };
 
   return (
     <section id="intro">
@@ -47,7 +32,19 @@ const Intro = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          {t('intro.title')}
+          {/* {t('intro.title')} */}
+          <h1 className="heading-font">
+              {/* <span className="title-font">portfolio</span> */}
+              
+              <motion.em
+                className="alt-font"
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: 0.3, duration: 0.5 }}
+              >
+                hi, I'm youngjin lee
+              </motion.em>
+          </h1>
         </motion.h2>
         
         <div className="intro__lines" aria-hidden="true">
@@ -64,15 +61,13 @@ const Intro = () => {
         
         <motion.div 
           className="intro__text"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.8, delay: 0.5 }}
+          // initial={{ opacity: 0 }}
+          // animate={{ opacity: 1 }}
+          // transition={{ duration: 0.8, delay: 0.5 }}
         >
-          <motion.div 
+          <div 
             className="text"
             style={{ 
-              x: calculateOffset('x'),
-              y: calculateOffset('y'),
               height: "100%",
               display: "flex",
               alignItems: "center",
@@ -80,26 +75,32 @@ const Intro = () => {
             }}
           >
             <div className="text-inner">
+              <motion.div
+              style={{fontSize: "2.25rem"}}>
+                {t(`intro.title`)}
+              </motion.div>
               {t('intro.desc', { returnObjects: true }).map((item, index) => (
                 <motion.div 
                   key={index}
-                  className="alt-font"
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: 0.8 + (index * 0.2) }}
+                  // className="alt-font"
+                  // initial={{ opacity: 0, y: 20 }}
+                  // animate={{ opacity: 1, y: 0 }}
+                  // transition={{ duration: 0.5, delay: 0.8 + (index * 0.2) }}
+                  style={{fontSize: "1.25rem"}}
                 >
                   {item}
                 </motion.div>
               ))}
-              <motion.button 
+
+              {/* <motion.button 
                 className="contact-button heading-font"
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.95 }}
               >
                 {t('contact.title')}
-              </motion.button>
+              </motion.button> */}
             </div>
-          </motion.div>
+          </div>
           
           {/* <motion.div 
             className="img"

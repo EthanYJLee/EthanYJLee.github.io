@@ -354,6 +354,7 @@
                 }
                 
                 .text {
+                    text-wrap: pretty !important;
                     margin-bottom: 1.2rem;
                     
                     div {
@@ -442,6 +443,7 @@
             
             // Image Section
             .image-section {
+                cursor: pointer;
                 display: block;
                 padding: 10px 30px !important;
                 max-height: 85%;

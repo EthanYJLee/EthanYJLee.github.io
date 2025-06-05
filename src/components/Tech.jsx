@@ -53,7 +53,7 @@ const techStack = [
     icon: <FaTools className="text-yellow-500 text-2xl" />,
     items: [
       "Eclipse / STS / VS Code / Xcode",
-      "Git",
+      "Git / GitHub / SourceTree",
       "Postman",
       "Slack / Notion / Zoom / Figma",
     ],

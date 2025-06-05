@@ -47,6 +47,7 @@
     justify-content: flex-end;
     flex-direction: column;
     padding: 20px;
+    padding-bottom: 30px;
     position: relative;
     z-index: 5;
     max-width: 1200px;
@@ -99,7 +100,7 @@
         background-color: var(--black);
         color: var(--white);
         display: flex;
-        align-items: center;
+        align-items: start !important;
         justify-content: center;
         flex-direction: column;
         position: relative;
@@ -118,7 +119,7 @@
             margin-bottom: 0;
             text-align: center;
             display: flex;
-            align-items: center;
+            align-items: start;
             justify-content: center;
             border-radius: 15px;
         }
@@ -146,10 +147,10 @@
             line-height: 1.5;
             font-weight: 600;
             text-transform: uppercase;
-            text-align: center;
+            text-align: start;
             position: relative;
             z-index: 100;
-            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            // transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             width: 100%;
             max-width: 90%;
             margin: 0 auto;
@@ -167,9 +168,10 @@
                 width: 100%;
                 display: flex;
                 flex-direction: column;
-                align-items: center;
+                align-items: start;
                 justify-content: center;
                 padding: 20px 0;
+                
             }
             
             div {
@@ -246,14 +248,14 @@
                     transition: all 0.5s ease;
                 }
                 
-                &:hover {
-                    transform: translateY(-3px);
-                    box-shadow: var(--shadow-lg);
+                // &:hover {
+                //     transform: translateY(-3px);
+                //     box-shadow: var(--shadow-lg);
                     
-                    &::before {
-                        transform: translateX(100%);
-                    }
-                }
+                //     &::before {
+                //         transform: translateX(100%);
+                //     }
+                // }
                 
                 &:active {
                     transform: translateY(0);
@@ -294,25 +296,25 @@
             }
         }
 
-        &:hover {
-            .text {
-                transform: translateZ(40px);
+        // &:hover {
+        //     .text {
+        //         transform: translateZ(40px);
                 
-                .contact-button {
-                    opacity: 1;
-                }
-            }
+        //         .contact-button {
+        //             opacity: 1;
+        //         }
+        //     }
             
-            .img {
-                filter: grayscale(0);
-                opacity: 1;
-                transform: translate(-50%, -50%) scale(1.05);
+        //     .img {
+        //         filter: grayscale(0);
+        //         opacity: 1;
+        //         transform: translate(-50%, -50%) scale(1.05);
                 
-                img {
-                    transform: scale(1.1);
-                }
-            }
-        }
+        //         img {
+        //             transform: scale(1.1);
+        //         }
+        //     }
+        // }
     }
 
     // Lines Section
