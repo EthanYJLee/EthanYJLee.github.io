@@ -14,6 +14,7 @@
         background-color: rgba(255, 255, 255, 0.98);
     }
     
+    // 모바일 기본 설정
     @media (max-width: 768px) {
         padding: 0;
     }
@@ -46,6 +47,190 @@
     max-width: 1400px;
     margin: 0 auto;
     
+    // ===== 반응형 디자인 - 상위 20개 인기 해상도 =====
+    
+    // 1. 1920×1080 (Full HD) - 8.37% (데스크톱/노트북)
+    @media (min-width: 1920px) {
+        padding: 1rem 3rem;
+        max-width: 1600px;
+    }
+    
+    // 2. 360×800 - 6.85% (저가형 스마트폰)
+    @media (max-width: 360px) {
+        padding: 0.5rem 1rem;
+        
+        .header__logo {
+            h1 span {
+                font-size: 0.9rem;
+            }
+            em {
+                font-size: 11px;
+            }
+        }
+    }
+    
+    // 3. 390×844 - 4.05% (iPhone 14/15 등)
+    @media (min-width: 361px) and (max-width: 390px) {
+        padding: 0.6rem 1rem;
+    }
+    
+    // 4. 1366×768 - 3.64% (예산형 노트북)
+    @media (min-width: 1366px) and (max-width: 1439px) {
+        padding: 0.8rem 2rem;
+        max-width: 1200px;
+    }
+    
+    // 5. 1536×864 - 3.62% (중급 노트북)
+    @media (min-width: 1536px) and (max-width: 1679px) {
+        padding: 0.9rem 2.5rem;
+        max-width: 1350px;
+    }
+    
+    // 6. 393×873 - 3.57% (최신 안드로이드)
+    @media (min-width: 391px) and (max-width: 393px) {
+        padding: 0.6rem 1rem;
+    }
+    
+    // 7. 375×812 - iPhone X/11/12 mini
+    @media (min-width: 374px) and (max-width: 375px) {
+        padding: 0.6rem 1rem;
+    }
+    
+    // 8. 412×915 - 중급 안드로이드
+    @media (min-width: 394px) and (max-width: 414px) {
+        padding: 0.6rem 1.2rem;
+    }
+    
+    // 9. 768×1024 - iPad (세로 모드)
+    @media (min-width: 768px) and (max-width: 834px) {
+        padding: 0.7rem 1.5rem;
+    }
+    
+    // 10. 414×896 - iPhone 11/XR
+    @media (min-width: 414px) and (max-width: 428px) {
+        padding: 0.6rem 1.2rem;
+    }
+    
+    // 11. 1280×720 - HD 디스플레이
+    @media (min-width: 1280px) and (max-width: 1365px) {
+        padding: 0.8rem 2rem;
+        max-width: 1100px;
+    }
+    
+    // 12. 430×932 - iPhone 14 Pro Max
+    @media (min-width: 429px) and (max-width: 430px) {
+        padding: 0.6rem 1.2rem;
+    }
+    
+    // 13. 1440×900 - 구형 맥북/모니터
+    @media (min-width: 1440px) and (max-width: 1535px) {
+        padding: 0.8rem 2.2rem;
+        max-width: 1280px;
+    }
+    
+    // 14. 820×1180 - iPad Air (세로 모드)
+    @media (min-width: 820px) and (max-width: 834px) {
+        padding: 0.7rem 1.8rem;
+    }
+    
+    // 15. 1024×768 - 구형 태블릿/모니터
+    @media (min-width: 1024px) and (max-width: 1279px) {
+        padding: 0.7rem 1.8rem;
+        max-width: 960px;
+    }
+    
+    // 16. 360×640 - 구형 스마트폰
+    @media (max-height: 640px) and (max-width: 360px) {
+        padding: 0.4rem 0.8rem;
+        
+        .header__logo {
+            h1 span {
+                font-size: 0.8rem;
+            }
+            em {
+                font-size: 10px;
+            }
+        }
+    }
+    
+    // 17. 1600×900 - 중급 모니터
+    @media (min-width: 1600px) and (max-width: 1679px) {
+        padding: 0.9rem 2.5rem;
+        max-width: 1400px;
+    }
+    
+    // 18. 2560×1440 - QHD 모니터
+    @media (min-width: 2560px) {
+        padding: 1.2rem 4rem;
+        max-width: 2000px;
+        
+        .header__logo {
+            h1 span {
+                font-size: 1.4rem;
+            }
+            em {
+                font-size: 16px;
+            }
+        }
+    }
+    
+    // 19. 1080×1920 - 모바일 세로 모드 (Full HD)
+    @media (min-width: 1080px) and (max-width: 1199px) {
+        padding: 0.7rem 2rem;
+        max-width: 1000px;
+    }
+    
+    // 20. 828×1792 - iPhone XR
+    @media (min-width: 768px) and (max-width: 828px) {
+        padding: 0.7rem 1.5rem;
+    }
+    
+    // 추가 특수 케이스
+    
+    // 4K 디스플레이 (3840×2160)
+    @media (min-width: 3840px) {
+        padding: 1.5rem 5rem;
+        max-width: 2400px;
+        
+        .header__logo {
+            h1 span {
+                font-size: 1.6rem;
+            }
+            em {
+                font-size: 18px;
+            }
+        }
+    }
+    
+    // 접이식 폰 (Galaxy Fold 등)
+    @media (min-width: 280px) and (max-width: 320px) {
+        padding: 0.4rem 0.5rem;
+        
+        .header__logo {
+            h1 span {
+                font-size: 0.7rem;
+            }
+            em {
+                font-size: 9px;
+            }
+        }
+    }
+    
+    // 가로 모드 모바일 대응
+    @media (max-height: 500px) and (orientation: landscape) {
+        padding: 0.3rem 1rem;
+        
+        .header__logo {
+            h1 span {
+                font-size: 1rem;
+            }
+            em {
+                font-size: 11px;
+            }
+        }
+    }
+    
+    // 기본 모바일 스타일
     @media (max-width: 768px) {
         padding: 0.6rem 1rem;
     }
@@ -73,9 +258,23 @@
                     font-size: 1.2rem;
                     font-weight: 600;
                     color: var(--primary-color);
+                    transition: font-size var(--transition-normal);
                     
+                    // 반응형 폰트 크기
                     @media (max-width: 480px) {
                         font-size: 1rem;
+                    }
+                    
+                    @media (max-width: 360px) {
+                        font-size: 0.9rem;
+                    }
+                    
+                    @media (min-width: 1920px) {
+                        font-size: 1.3rem;
+                    }
+                    
+                    @media (min-width: 2560px) {
+                        font-size: 1.5rem;
                     }
                 }
                 
@@ -95,8 +294,21 @@
             transition: all var(--transition-normal);
             margin-top: 2px;
             
+            // 반응형 폰트 크기
             @media (max-width: 480px) {
                 font-size: 12px;
+            }
+            
+            @media (max-width: 360px) {
+                font-size: 11px;
+            }
+            
+            @media (min-width: 1920px) {
+                font-size: 15px;
+            }
+            
+            @media (min-width: 2560px) {
+                font-size: 16px;
             }
             
             &:hover {
@@ -107,6 +319,35 @@
     
     // Navigation Section
     .header__nav {
+        // 반응형 네비게이션 폰트 크기
+        @media (max-width: 360px) {
+            li a {
+                font-size: 12px;
+                padding: 10px;
+            }
+        }
+        
+        @media (min-width: 361px) and (max-width: 414px) {
+            li a {
+                font-size: 13px;
+                padding: 12px;
+            }
+        }
+        
+        @media (min-width: 1920px) {
+            li a {
+                font-size: 15px;
+                padding: 16px;
+            }
+        }
+        
+        @media (min-width: 2560px) {
+            li a {
+                font-size: 16px;
+                padding: 18px;
+            }
+        }
+        
         @media (max-width: 768px) {
             display: none;
             z-index: inherit;
@@ -140,6 +381,18 @@
                         }
                     }
                     
+                    // 모바일 메뉴 반응형 크기
+                    @media (max-width: 360px) {
+                        min-width: 150px;
+                        padding: 15px 0;
+                        top: 60px;
+                    }
+                    
+                    @media (min-width: 361px) and (max-width: 414px) {
+                        min-width: 160px;
+                        top: 64px;
+                    }
+                    
                     // 모바일에서는 nav-items와 language-selector를 세로로 배치
                     ul {
                         display: block !important;
@@ -159,8 +412,8 @@
                         width: 100%;
                         
                         .language-button {
-                            justify-content: flex-end;
-                            width: 100%;
+                            justify-content: flex-end !important;
+                            width: 100% !important;
                             text-align: right;
                         }
                     }
@@ -176,6 +429,17 @@
                             width: 100%;
                             font-weight: 500;
                             transition: all var(--transition-fast);
+                            
+                            // 모바일 메뉴 아이템 반응형 폰트
+                            @media (max-width: 360px) {
+                                font-size: 13px;
+                                padding: 8px 15px;
+                            }
+                            
+                            @media (min-width: 361px) and (max-width: 414px) {
+                                font-size: 14px;
+                                padding: 10px 18px;
+                            }
                             
                             &:hover {
                                 background-color: var(--neutral-100);
@@ -213,6 +477,19 @@
             .nav-item {
                 // 일반 메뉴 아이템들은 왼쪽에 그룹화
                 margin-right: 5px;
+                
+                // 반응형 마진 조정
+                @media (max-width: 1366px) {
+                    margin-right: 3px;
+                }
+                
+                @media (min-width: 1920px) {
+                    margin-right: 8px;
+                }
+                
+                @media (min-width: 2560px) {
+                    margin-right: 12px;
+                }
             }
             
             .language-selector {
@@ -299,6 +576,19 @@
             align-items: center;
             justify-content: center;
         }
+        
+        // 모바일 햄버거 메뉴 반응형 크기
+        @media (max-width: 360px) {
+            width: 35px;
+            height: 35px;
+            padding: 8px;
+        }
+        
+        @media (min-width: 361px) and (max-width: 414px) {
+            width: 38px;
+            height: 38px;
+            padding: 9px;
+        }
 
         span {
             display: block;
@@ -308,6 +598,16 @@
             margin-top: 0;
             position: relative;
             transition: all var(--transition-normal);
+            
+            // 반응형 햄버거 라인 크기
+            @media (max-width: 360px) {
+                width: 20px;
+                height: 1.5px;
+            }
+            
+            @media (min-width: 361px) and (max-width: 414px) {
+                width: 22px;
+            }
 
             &::before,
             &::after {
@@ -317,139 +617,415 @@
                 background-color: var(--primary-color);
                 position: absolute;
                 transition: all var(--transition-normal);
+                
+                // 반응형 햄버거 라인 크기
+                @media (max-width: 360px) {
+                    width: 20px;
+                    height: 1.5px;
+                }
+                
+                @media (min-width: 361px) and (max-width: 414px) {
+                    width: 22px;
+                }
             }
 
             &::before {
                 right: 0;
                 top: -8px;
+                
+                @media (max-width: 360px) {
+                    top: -6px;
+                }
             }
 
             &::after {
                 left: 0;
                 bottom: -8px;
+                
+                @media (max-width: 360px) {
+                    bottom: -6px;
+                }
             }
         }
     }
 }
 
-// 언어 선택 메뉴 스타일
+// Language Selector
 .language-selector {
-  position: relative;
-  display: inline-block !important;
-  vertical-align: middle;
-  z-index: 20000;
-  
-  .language-button {
-    display: flex;
-    align-items: center;
-    gap: 5px;
-    cursor: pointer;
-    padding: 5px 10px;
-    border-radius: 5px;
-    transition: all 0.3s ease;
+    position: relative;
+    z-index: 20000;
+    margin-left: auto;
     
-    &:hover {
-      background-color: var(--neutral-200);
+    // 반응형 언어 선택기 크기
+    @media (max-width: 360px) {
+        .language-button {
+            font-size: 11px;
+            padding: 8px 12px;
+            min-width: 80px;
+        }
     }
     
-    .language-icon {
-      font-size: 0.7rem;
-      margin-top: 2px;
+    @media (min-width: 361px) and (max-width: 414px) {
+        .language-button {
+            font-size: 12px;
+            padding: 10px 14px;
+            min-width: 90px;
+        }
     }
-  }
-  
-  .language-dropdown {
-    position: absolute;
-    top: 100%;
-    right: 0;
-    min-width: 150px;
-    width: auto;
-    min-height: auto;
-    height: auto;
-    white-space: nowrap;
-    background-color: rgba(255, 255, 255, 0.98);
-    backdrop-filter: blur(15px);
-    border-radius: 8px;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
-    z-index: 20001;
-    overflow: visible;
-    margin-top: 8px;
     
-    ul {
-      margin: 0;
-      padding: 0;
-      list-style: none;
-      min-height: auto;
-      
-      li {
-        padding: 12px 15px;
+    @media (min-width: 768px) and (max-width: 1024px) {
+        .language-button {
+            font-size: 13px;
+            padding: 12px 16px;
+        }
+    }
+    
+    @media (min-width: 1920px) {
+        .language-button {
+            font-size: 15px;
+            padding: 16px 20px;
+            min-width: 120px;
+        }
+    }
+    
+    @media (min-width: 2560px) {
+        .language-button {
+            font-size: 16px;
+            padding: 18px 24px;
+            min-width: 140px;
+        }
+    }
+
+    .language-button {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 14px 16px;
+        background-color: transparent;
+        border: 1px solid var(--neutral-300);
+        border-radius: 8px;
+        color: var(--neutral-700);
+        font-size: 14px;
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
         cursor: pointer;
-        transition: background-color 0.2s ease;
-        margin: 0 !important;
-        font-size: 0.9rem;
-        white-space: nowrap;
+        transition: all var(--transition-normal);
+        min-width: 100px;
+        position: relative;
+        z-index: 20001;
+
+        &:hover {
+            background-color: var(--neutral-50);
+            border-color: var(--primary-color);
+            color: var(--primary-color);
+        }
+
+        .language-text {
+            margin-right: 8px;
+            white-space: nowrap;
+            
+            // 반응형 텍스트 크기
+            @media (max-width: 360px) {
+                font-size: 11px;
+                margin-right: 6px;
+            }
+            
+            @media (min-width: 361px) and (max-width: 414px) {
+                font-size: 12px;
+                margin-right: 7px;
+            }
+            
+            @media (min-width: 1920px) {
+                font-size: 15px;
+                margin-right: 10px;
+            }
+            
+            @media (min-width: 2560px) {
+                font-size: 16px;
+                margin-right: 12px;
+            }
+        }
+
+        .language-arrow {
+            width: 12px;
+            height: 12px;
+            transition: transform var(--transition-normal);
+            
+            // 반응형 화살표 크기
+            @media (max-width: 360px) {
+                width: 10px;
+                height: 10px;
+            }
+            
+            @media (min-width: 361px) and (max-width: 414px) {
+                width: 11px;
+                height: 11px;
+            }
+            
+            @media (min-width: 1920px) {
+                width: 14px;
+                height: 14px;
+            }
+            
+            @media (min-width: 2560px) {
+                width: 16px;
+                height: 16px;
+            }
+
+            svg {
+                width: 100%;
+                height: 100%;
+                fill: currentColor;
+            }
+        }
+
+        &.open .language-arrow {
+            transform: rotate(180deg);
+        }
+    }
+
+    .language-dropdown {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        min-width: 120px;
+        background-color: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(15px);
+        border: 1px solid var(--neutral-200);
+        border-radius: 8px;
+        box-shadow: var(--shadow-lg);
+        z-index: 20000;
+        overflow: visible;
+        margin-top: 4px;
+        
+        // 반응형 드롭다운 크기
+        @media (max-width: 360px) {
+            min-width: 100px;
+            margin-top: 2px;
+        }
+        
+        @media (min-width: 361px) and (max-width: 414px) {
+            min-width: 110px;
+            margin-top: 3px;
+        }
+        
+        @media (min-width: 768px) and (max-width: 1024px) {
+            min-width: 130px;
+        }
+        
+        @media (min-width: 1920px) {
+            min-width: 150px;
+            margin-top: 6px;
+        }
+        
+        @media (min-width: 2560px) {
+            min-width: 180px;
+            margin-top: 8px;
+        }
+
+        ul {
+            list-style: none;
+            margin: 0;
+            padding: 8px 0;
+            
+            // 반응형 패딩
+            @media (max-width: 360px) {
+                padding: 6px 0;
+            }
+            
+            @media (min-width: 361px) and (max-width: 414px) {
+                padding: 7px 0;
+            }
+            
+            @media (min-width: 1920px) {
+                padding: 10px 0;
+            }
+            
+            @media (min-width: 2560px) {
+                padding: 12px 0;
+            }
+
+            li {
+                cursor: pointer;
+                transition: background-color var(--transition-fast);
+
+                &:hover {
+                    background-color: var(--neutral-100);
+                }
+
+                button {
+                    width: 100%;
+                    padding: 10px 16px;
+                    border: none;
+                    background: none;
+                    text-align: left;
+                    color: var(--neutral-700);
+                    font-size: 14px;
+                    font-weight: 500;
+                    text-transform: uppercase;
+                    letter-spacing: 0.5px;
+                    cursor: pointer;
+                    transition: all var(--transition-fast);
+                    
+                    // 반응형 버튼 크기
+                    @media (max-width: 360px) {
+                        padding: 8px 12px;
+                        font-size: 11px;
+                    }
+                    
+                    @media (min-width: 361px) and (max-width: 414px) {
+                        padding: 9px 14px;
+                        font-size: 12px;
+                    }
+                    
+                    @media (min-width: 768px) and (max-width: 1024px) {
+                        font-size: 13px;
+                    }
+                    
+                    @media (min-width: 1920px) {
+                        padding: 12px 20px;
+                        font-size: 15px;
+                    }
+                    
+                    @media (min-width: 2560px) {
+                        padding: 14px 24px;
+                        font-size: 16px;
+                    }
+
+                    &:hover {
+                        color: var(--primary-color);
+                        background-color: var(--primary-light);
+                    }
+
+                    &.active {
+                        color: var(--primary-color);
+                        font-weight: 600;
+                        background-color: var(--primary-light);
+                    }
+                }
+            }
+        }
+    }
+    
+    // 모바일에서 언어 선택기 우측 정렬
+    .header__nav.show & {
+        text-align: right;
+        width: 100%;
         display: block;
         
-        &:hover {
-          background-color: rgba(0, 0, 0, 0.05);
+        .language-button {
+            justify-content: flex-end !important;
+            width: 100% !important;
+            margin-left: auto;
+            
+            // 모바일에서 더 작은 크기
+            @media (max-width: 360px) {
+                padding: 8px 12px;
+                font-size: 11px;
+                min-width: 80px;
+            }
+            
+            @media (min-width: 361px) and (max-width: 414px) {
+                padding: 10px 14px;
+                font-size: 12px;
+                min-width: 90px;
+            }
         }
         
-        &.active {
-          background-color: var(--primary-light);
-          color: var(--primary-color);
-          font-weight: 600;
+        .language-dropdown {
+            right: 0;
+            left: auto;
+            
+            // 모바일에서 드롭다운 위치 조정
+            @media (max-width: 360px) {
+                margin-top: 2px;
+            }
+            
+            @media (min-width: 361px) and (max-width: 414px) {
+                margin-top: 3px;
+            }
         }
-        
-        &:first-child {
-          border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-        }
-      }
     }
-  }
 }
 
-// 모바일 스타일
-@media (max-width: 768px) {
-  .header__nav.show .language-selector {
-    z-index: 20000 !important;
-    text-align: right;
-    width: 100%;
-    display: block;
+// Container for responsive layout
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
     
-    .language-button {
-      justify-content: flex-end !important;
-      padding: 10px 20px;
-      width: 100% !important;
-      text-align: right;
-      display: flex !important;
-      margin-left: auto;
+    // 반응형 컨테이너 최대 너비
+    @media (min-width: 1366px) {
+        max-width: 1300px;
+        padding: 0 1.5rem;
     }
     
-    .language-dropdown {
-      position: relative;
-      top: 40;
-      left: auto;
-      right: auto;
-      width: 100%;
-      min-height: auto;
-      height: auto;
-      margin: 5px 0 0 0;
-      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
-      overflow: visible;
-      background-color: rgba(255, 255, 255, 0.98);
-      backdrop-filter: blur(15px);
-      border-radius: 8px;
-      
-      ul {
-        min-height: auto;
-        
-        li {
-          text-align: right;
-          padding: 15px 20px;
-          font-size: 1rem;
-          display: block;
+    @media (min-width: 1440px) {
+        max-width: 1400px;
+        padding: 0 2rem;
+    }
+    
+    @media (min-width: 1536px) {
+        max-width: 1500px;
+        padding: 0 2.5rem;
+    }
+    
+    @media (min-width: 1920px) {
+        max-width: 1800px;
+        padding: 0 3rem;
+    }
+    
+    @media (min-width: 2560px) {
+        max-width: 2400px;
+        padding: 0 4rem;
+    }
+    
+    @media (min-width: 3840px) {
+        max-width: 3600px;
+        padding: 0 6rem;
+    }
+    
+    // 모바일 반응형
+    @media (max-width: 360px) {
+        padding: 0 0.5rem;
+    }
+    
+    @media (min-width: 361px) and (max-width: 414px) {
+        padding: 0 0.75rem;
+    }
+    
+    @media (min-width: 768px) and (max-width: 1024px) {
+        padding: 0 1.5rem;
+    }
+}
+
+// High DPI displays (Retina, etc.)
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    .header__logo {
+        h1 span {
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
         }
-      }
     }
-  }
+    
+    .language-button,
+    .header__nav li a {
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+}
+
+// Ultra-wide displays (21:9 aspect ratio)
+@media (min-aspect-ratio: 21/9) {
+    .header__inner {
+        max-width: 90%;
+    }
+}
+
+// Print styles
+@media print {
+    #header {
+        display: none;
+    }
 } 
