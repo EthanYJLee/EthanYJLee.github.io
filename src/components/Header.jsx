@@ -36,6 +36,10 @@ const Header = () => {
 
   const toggleMenu = () => {
     setShow((prevShow) => !prevShow);
+    // 모바일 메뉴가 닫힐 때 언어 메뉴도 닫기
+    if (show) {
+      setShowLanguageMenu(false);
+    }
   };
 
   const toggleLanguageMenu = () => {
@@ -61,13 +65,30 @@ const Header = () => {
   };
 
   const languageMenuVariants = {
-    hidden: { opacity: 0, y: -10, scale: 0.95 },
+    hidden: { 
+      opacity: 0, 
+      y: -10, 
+      scale: 0.95,
+      height: 0
+    },
     visible: { 
       opacity: 1, 
       y: 0, 
       scale: 1,
+      height: "auto",
       transition: {
-        duration: 0.2
+        duration: 0.2,
+        ease: "easeOut"
+      }
+    },
+    exit: {
+      opacity: 0,
+      y: -10,
+      scale: 0.95,
+      height: 0,
+      transition: {
+        duration: 0.15,
+        ease: "easeIn"
       }
     }
   };
@@ -117,6 +138,7 @@ const Header = () => {
                 initial="hidden"
                 animate="visible"
                 variants={navVariants}
+                className="nav-item"
               >
                 <a 
                   href={nav.url} 
@@ -133,16 +155,32 @@ const Header = () => {
               </motion.li>
             ))}
             
-            {/* 언어 선택 메뉴 */}
+            {/* 언어 선택 메뉴 - 우측에 분리 배치 */}
             <motion.li 
               className="language-selector"
               custom={headerNav.length}
               initial="hidden"
               animate="visible"
               variants={navVariants}
-              style={{ display: 'inline' }}
+              style={{ 
+                display: 'inline-block',
+                position: 'relative',
+                zIndex: 20000
+              }}
             >
-              <div className="language-button" onClick={toggleLanguageMenu}>
+              <div 
+                className="language-button" 
+                onClick={toggleLanguageMenu}
+                style={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '5px',
+                  cursor: 'pointer',
+                  padding: '5px 10px',
+                  borderRadius: '5px',
+                  transition: 'all 0.3s ease'
+                }}
+              >
                 <span>{currentLanguage === 'ko' ? '한국어' : 'English'}</span>
                 <span className="language-icon">▼</span>
               </div>
@@ -154,25 +192,73 @@ const Header = () => {
                     variants={languageMenuVariants}
                     initial="hidden"
                     animate="visible"
-                    exit="hidden"
+                    exit="exit"
+                    style={{
+                      position: 'absolute',
+                      top: '32px',
+                      right: 0,
+                      zIndex: 20001, // 더 높은 z-index
+                      minWidth: '150px',
+                      backgroundColor: 'rgba(255, 255, 255, 0.98)',
+                      backdropFilter: 'blur(15px)',
+                      borderRadius: '8px',
+                      boxShadow: '0 8px 32px rgba(0, 0, 0, 0.15)',
+                      marginTop: '8px',
+                      overflow: 'visible' // hidden에서 visible로 변경
+                    }}
                   >
-                    <ul>
-                      
-                      <li 
+                    <motion.ul 
+                      style={{ 
+                        top: '20px',
+                        margin: 0, 
+                        padding: 0,
+                        listStyle: 'none'
+                      }}
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      exit={{ opacity: 0 }}
+                      transition={{ delay: 0.1 }}
+                    >
+                      <motion.li 
                         className={currentLanguage === 'en' ? 'active' : ''}
                         onClick={() => changeLanguage('en')}
-                        style={{ padding: '10px 20px' }}
+                        style={{ 
+                          padding: '12px 20px',
+                          cursor: 'pointer',
+                          transition: 'background-color 0.2s ease',
+                          margin: 0,
+                          fontSize: '0.9rem',
+                          borderBottom: '1px solid rgba(0, 0, 0, 0.05)',
+                          whiteSpace: 'nowrap',
+                          textAlign: 'right'
+                        }}
+                        whileHover={{ backgroundColor: 'rgba(0, 0, 0, 0.05)' }}
+                        initial={{ x: -10, opacity: 0 }}
+                        animate={{ x: 0, opacity: 1 }}
+                        transition={{ delay: 0.1 }}
                       >
                         {t('language.en')}
-                      </li>
-                      <li 
+                      </motion.li>
+                      <motion.li 
                         className={currentLanguage === 'ko' ? 'active' : ''}
                         onClick={() => changeLanguage('ko')}
-                        style={{ padding: '10px 20px' }}
+                        style={{ 
+                          padding: '12px 20px',
+                          cursor: 'pointer',
+                          transition: 'background-color 0.2s ease',
+                          margin: 0,
+                          fontSize: '0.9rem',
+                          whiteSpace: 'nowrap',
+                          textAlign: 'right'
+                        }}
+                        whileHover={{ backgroundColor: 'rgba(0, 0, 0, 0.05)' }}
+                        initial={{ x: -10, opacity: 0 }}
+                        animate={{ x: 0, opacity: 1 }}
+                        transition={{ delay: 0.15 }}
                       >
                         {t('language.ko')}
-                      </li>
-                    </ul>
+                      </motion.li>
+                    </motion.ul>
                   </motion.div>
                 )}
               </AnimatePresence>

@@ -75,8 +75,7 @@ const Intro = () => {
             }}
           >
             <div className="text-inner">
-              <motion.div
-              style={{fontSize: "2.25rem"}}>
+              <motion.div>
                 {t(`intro.title`)}
               </motion.div>
               {t('intro.desc', { returnObjects: true }).map((item, index) => (
@@ -86,7 +85,6 @@ const Intro = () => {
                   // initial={{ opacity: 0, y: 20 }}
                   // animate={{ opacity: 1, y: 0 }}
                   // transition={{ duration: 0.5, delay: 0.8 + (index * 0.2) }}
-                  style={{fontSize: "1.25rem"}}
                 >
                   {item}
                 </motion.div>

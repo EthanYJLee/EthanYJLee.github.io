@@ -139,6 +139,31 @@
                             transform: translateY(0) scale(1);
                         }
                     }
+                    
+                    // 모바일에서는 nav-items와 language-selector를 세로로 배치
+                    ul {
+                        display: block !important;
+                        flex-direction: column;
+                    }
+                    
+                    .nav-item {
+                        margin-right: 0;
+                    }
+                    
+                    .language-selector {
+                        margin-left: 0;
+                        margin-top: 10px;
+                        padding-top: 10px;
+                        border-top: 1px solid var(--neutral-200);
+                        text-align: right;
+                        width: 100%;
+                        
+                        .language-button {
+                            justify-content: flex-end;
+                            width: 100%;
+                            text-align: right;
+                        }
+                    }
 
                     li {
                         display: block;
@@ -174,6 +199,25 @@
                 width: 20px;
                 transform: rotate(-45deg);
                 bottom: 0;
+            }
+        }
+        
+        // 데스크톱에서 언어 선택기를 우측으로 분리
+        ul {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            gap: 0;
+            width: 100%;
+            
+            .nav-item {
+                // 일반 메뉴 아이템들은 왼쪽에 그룹화
+                margin-right: 5px;
+            }
+            
+            .language-selector {
+                margin-left: auto; // 우측으로 밀어내기
+                margin-right: 0;
             }
         }
         
@@ -293,6 +337,7 @@
   position: relative;
   display: inline-block !important;
   vertical-align: middle;
+  z-index: 20000;
   
   .language-button {
     display: flex;
@@ -319,27 +364,34 @@
     right: 0;
     min-width: 150px;
     width: auto;
+    min-height: auto;
+    height: auto;
     white-space: nowrap;
-    background-color: var(--white);
+    background-color: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(15px);
     border-radius: 8px;
-    box-shadow: var(--shadow-md);
-    z-index: 1000;
-    overflow: hidden;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+    z-index: 20001;
+    overflow: visible;
     margin-top: 8px;
     
     ul {
       margin: 0;
       padding: 0;
+      list-style: none;
+      min-height: auto;
       
       li {
-        padding: 10px 15px;
+        padding: 12px 15px;
         cursor: pointer;
         transition: background-color 0.2s ease;
         margin: 0 !important;
-        // font-size: 0.9rem;
+        font-size: 0.9rem;
+        white-space: nowrap;
+        display: block;
         
         &:hover {
-          background-color: var(--neutral-100);
+          background-color: rgba(0, 0, 0, 0.05);
         }
         
         &.active {
@@ -347,27 +399,57 @@
           color: var(--primary-color);
           font-weight: 600;
         }
+        
+        &:first-child {
+          border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        }
       }
     }
   }
 }
 
 // 모바일 스타일
-@media (max-width: 800px) {
-  .language-selector {
-    margin-top: 10px;
-    padding-top: 10px;
-    border-top: 1px solid var(--neutral-200);
+@media (max-width: 768px) {
+  .header__nav.show .language-selector {
+    z-index: 20000 !important;
+    text-align: right;
+    width: 100%;
+    display: block;
     
     .language-button {
-      justify-content: center;
-      padding: 10px;
+      justify-content: flex-end !important;
+      padding: 10px 20px;
+      width: 100% !important;
+      text-align: right;
+      display: flex !important;
+      margin-left: auto;
     }
     
     .language-dropdown {
       position: relative;
+      top: 40;
+      left: auto;
+      right: auto;
       width: 100%;
-      margin-top: 5px;
+      min-height: auto;
+      height: auto;
+      margin: 5px 0 0 0;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+      overflow: visible;
+      background-color: rgba(255, 255, 255, 0.98);
+      backdrop-filter: blur(15px);
+      border-radius: 8px;
+      
+      ul {
+        min-height: auto;
+        
+        li {
+          text-align: right;
+          padding: 15px 20px;
+          font-size: 1rem;
+          display: block;
+        }
+      }
     }
   }
 } 
