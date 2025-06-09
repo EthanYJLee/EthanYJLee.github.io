@@ -37,7 +37,7 @@ export const careerData = {
     {
       institution: "빅데이터 분석 & 추천시스템 개발자 양성과정",
       degree: "K-Digital Training 과정",
-      period: "2023.01 - 2023.06",
+      period: "2022.09 - 2023.03",
       description: "실무 중심의 SW 개발 / 데이터 분석 & 머신러닝 교육 수료",
     },
   ],
