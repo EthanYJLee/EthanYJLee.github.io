@@ -47,11 +47,7 @@
     "certifications": {
         "title": "Certifications",
         "lists": [
-          {
-            "name": "Engineer Information Processing",
-            "issuer": "Human Resources Development Service of Korea",
-            "date": "2025.06"
-          },
+          
           {
             "name": "ADsP: Advanced Data Analytics Semi-Professional",
             "issuer": "Korea Data Agency",
@@ -61,6 +57,11 @@
             "name": "SQLD: Structured Query Language Developer",
             "issuer": "Korea Data Agency",
             "date": "2025.04"
+          },
+          {
+            "name": "Engineer Information Processing",
+            "issuer": "Human Resources Development Service of Korea",
+            "date": "2025.06"
           }
 
         ]
