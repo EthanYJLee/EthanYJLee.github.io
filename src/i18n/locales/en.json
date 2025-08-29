@@ -35,7 +35,8 @@
           {
             "institution": "Big Data Analysis & Recommendation System Development Bootcamp",
             "degree": "K-Digital Training Course",
-            "period": "2022.09 - 2023.03"
+            "period": "2022.09 - 2023.03",
+            "detail": "detail >"
           },
           {
             "institution": "MEDI-IoT",
@@ -65,6 +66,25 @@
           }
 
         ]
+    },
+    "languages": {
+      "title": "Languages",
+      "lists": [
+        {
+          "name": "Korean",
+          "level": "Native"
+        },
+        {
+          "name": "English",
+          "level": "Intermediate",
+          "certification": "TOEIC 890"
+        },
+        {
+          "name": "Japanese",
+          "level": "Beginner",
+          "certification": "JLPT N3"
+        }
+      ]
     }
   },
   "work": {

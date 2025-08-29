@@ -64,6 +64,24 @@
               "date": "2025.06"
             }
         ]
+    },
+    "languages": {
+      "title": "언어",
+      "lists": [
+        {
+          "name": "한국어"
+        },
+        {
+          "name": "영어",
+          "level": "중급",
+          "certification": "TOEIC 890"
+        },
+        {
+          "name": "일본어",
+          "level": "초급",
+          "certification": "JLPT N3"
+        }
+      ]
     }
   },
   "work": {
