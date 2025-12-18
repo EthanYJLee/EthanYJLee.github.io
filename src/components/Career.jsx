@@ -4,7 +4,8 @@ import { useTranslation } from "react-i18next";
 
 const Career = () => {
   const { t } = useTranslation();
-  const experienceData = t("career.experience.lists", { returnObjects: true });
+  const workExperienceData = t("career.work_experience.lists", { returnObjects: true });
+  const educationData = t("career.education.lists", { returnObjects: true });
   const certificationData = t("career.certifications.lists", {
     returnObjects: true,
   });
@@ -18,21 +19,34 @@ const Career = () => {
         </h2>
 
         <div className="career__container">
-          <div className="education__column">
-            <h3 className="column__title">{t("career.experience.title")}</h3>
+          {/* 경력사항 */}
+          <div className="work_experience__column">
+            <h3 className="column__title">{t("career.work_experience.title")}</h3>
             <div className="timeline">
-              {experienceData.map((item, index) => (
+              {workExperienceData.map((item, index) => (
+                <div className="timeline__item" key={index}>
+                  <div className="timeline__dot"></div>
+                  <div className="timeline__content">
+                    <h4 className="timeline__title">{item.company}</h4>
+                    <p className="timeline__degree">{item.position}</p>
+                    <p className="timeline__period">{item.period}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+          {/* 학력/교육 */}
+          <div className="education__column">
+            <h3 className="column__title">{t("career.education.title")}</h3>
+            <div className="timeline">
+              {educationData.map((item, index) => (
                 <div className="timeline__item" key={index}>
                   <div className="timeline__dot"></div>
                   <div className="timeline__content">
                     <h4 className="timeline__title">{item.institution}</h4>
                     <p className="timeline__degree">{item.degree}</p>
                     <p className="timeline__period">{item.period}</p>
-                    {item.description && (
-                      <p className="timeline__description">
-                        {item.description}
-                      </p>
-                    )}
+                    {item.description && <p className="timeline__description">{item.description}</p>}
                     {/* {item.detail && (
                       <p>{item.detail}</p>
                     )} */}
@@ -41,11 +55,9 @@ const Career = () => {
               ))}
             </div>
           </div>
-
+          {/* 자격증 */}
           <div className="certification__column">
-            <h3 className="column__title">
-              {t("career.certifications.title")}
-            </h3>
+            <h3 className="column__title">{t("career.certifications.title")}</h3>
             <div className="timeline">
               {certificationData.map((item, index) => (
                 <div className="timeline__item" key={index}>
@@ -54,17 +66,13 @@ const Career = () => {
                     <h4 className="timeline__title">{item.name}</h4>
                     <p className="timeline__issuer">{item.issuer}</p>
                     <p className="timeline__date">{item.date}</p>
-                    {item.description && (
-                      <p className="timeline__description">
-                        {item.description}
-                      </p>
-                    )}
+                    {item.description && <p className="timeline__description">{item.description}</p>}
                   </div>
                 </div>
               ))}
             </div>
           </div>
-          <div className="language__column">
+          {/* <div className="language__column">
             <h3 className="column__title">{t("career.languages.title")}</h3>
             <div className="timeline">
               {languageData.map((item, index) => (
@@ -82,7 +90,7 @@ const Career = () => {
                 </div>
               ))}
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
     </section>
