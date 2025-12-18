@@ -9,7 +9,9 @@
   },
   "intro": {
     "title": "About Me",
-    "desc": ["경영학 전공자로서 비즈니스 관점에서 문제를 바라보며, 스타트업에서의 개발 경험을 통해 백엔드, 프론트엔드 전반을 아우르는 실무 역량을 키웠습니다. 나아가 데이터를 기반으로 사용자 행동을 분석하고 서비스 개선에 활용하는 데 관심이 많으며, 개발뿐만 아니라 데이터 분석까지 가능한 문제 해결형 개발자를 지향합니다."]
+    "desc": [
+      "경영학 전공자로서 비즈니스 관점에서 문제를 바라보며, 스타트업에서의 개발 경험을 통해 백엔드, 프론트엔드 전반을 아우르는 실무 역량을 키웠습니다. 나아가 데이터를 기반으로 사용자 행동을 분석하고 서비스 개선에 활용하는 데 관심이 많으며, 개발뿐만 아니라 데이터 분석까지 가능한 문제 해결형 개발자를 지향합니다."
+    ]
   },
   "tech": {
     "title": "기술 스택",
@@ -24,46 +26,62 @@
   },
   "career": {
     "title": "경력 사항",
-    "experience": {
-        "title": "이력",
-        "lists": [
-          {
-            "institution": "세종대학교",
-            "degree": "호텔경영학 학사",
-            "period": "2014.03 - 2022.02"
-          },
-          {
-            "institution": "빅데이터 분석 & 추천시스템 개발자 양성과정",
-            "degree": "K-Digital Training 과정",
-            "period": "2022.09 - 2023.03"
-          },
-          {
-            "institution": "MEDI-IoT",
-            "degree": "풀스택 개발자",
-            "period": "2023.08 - 2024.12"
-          }
-        ]
+    "work-experience": {
+      "title": "경력",
+      "lists": [
+        {
+          "company": "(주)메디아이오티",
+          "position": "연구원 (개발자)",
+          "period": "2023.08 - 2024.12"
+        }
+      ]
+    },
+    "education": {
+      "title": "학력",
+      "lists": [
+        {
+          "institution": "세종대학교",
+          "degree": "호텔경영학 학사",
+          "period": "2014.03 - 2022.02"
+        },
+        {
+          "institution": "K-Digital Training 과정",
+          "degree": "빅데이터 분석 & 추천시스템 개발자 양성과정",
+          "period": "2022.09 - 2023.03",
+          "detail": "상세보기 >"
+        },
+        {
+          "institution": "고려대학교",
+          "degree": "지능정보 SW 아카데미",
+          "period": "2025.08 - 2025.12",
+          "detail": "상세보기 >"
+        }
+      ]
     },
     "certifications": {
-        "title": "자격증",
-        "lists": [
-            
-            {
-              "name": "ADsP: 데이터분석준전문가",
-              "issuer": "한국데이터산업진흥원",
-              "date": "2023.03"
-            },
-            {
-              "name": "SQLD: SQL개발자",
-              "issuer": "한국데이터산업진흥원",
-              "date": "2025.04"
-            },
-            {
-              "name": "정보처리기사",
-              "issuer": "한국산업인력공단",
-              "date": "2025.06"
-            }
-        ]
+      "title": "자격증",
+      "lists": [
+        {
+          "name": "ADsP: 데이터분석준전문가",
+          "issuer": "한국데이터산업진흥원",
+          "date": "2023.03"
+        },
+        {
+          "name": "SQLD: SQL개발자",
+          "issuer": "한국데이터산업진흥원",
+          "date": "2025.04"
+        },
+        {
+          "name": "정보처리기사",
+          "issuer": "한국산업인력공단",
+          "date": "2025.06"
+        },
+        {
+          "name": "AICE - ASSOCIATE",
+          "issuer": "KT & 한국경제신문",
+          "date": "2025.11"
+        }
+      ]
     },
     "languages": {
       "title": "언어",
@@ -111,7 +129,10 @@
         "code": "https://github.com/webstoryboy/port2023-vite",
         "view": "https://port2023-vite.netlify.app",
         "btn": [
-          { "text": "앱스토어", "link": "https://apps.apple.com/kr/app/%ED%88%AC%EB%AA%A8%EC%96%B4-twomore-%EC%9A%B4%EB%8F%99-%EA%B8%B0%EB%A1%9D/id6677026088?l=en-GB" }
+          {
+            "text": "앱스토어",
+            "link": "https://apps.apple.com/kr/app/%ED%88%AC%EB%AA%A8%EC%96%B4-twomore-%EC%9A%B4%EB%8F%99-%EA%B8%B0%EB%A1%9D/id6677026088?l=en-GB"
+          }
         ]
       },
       {
@@ -139,12 +160,15 @@
           "AgingLOC는 임상 근거 기반의 개인 맞춤형 헬스케어 서비스를 제공하는 플랫폼입니다. 간단한 설문과 체력 측정을 통해 118개의 운동 가이드 영상과 168가지의 운동 프로그램 조합을 추천하며, 피드백을 통해 맞춤 조정됩니다.",
           "리팩토링, 유지보수, 트러블슈팅 및 운동 프로그램을 관리하는 관리자 시스템의 개발에 참여하였습니다."
         ],
-        "stack": ["Flutter", "Spring Boot", "Meteor","MariaDB","MongoDB"],
+        "stack": ["Flutter", "Spring Boot", "Meteor", "MariaDB", "MongoDB"],
         "img": "images/agingloc.png",
         "code": "https://github.com/webstoryboy/port2023-next",
         "view": "https://port2023-next.netlify.app",
         "btn": [
-          { "text": "앱스토어", "link": "https://apps.apple.com/kr/app/%EC%97%90%EC%9D%B4%EC%A7%95%EB%9D%BD-agingloc/id6448716081?l=en-GB" },
+          {
+            "text": "앱스토어",
+            "link": "https://apps.apple.com/kr/app/%EC%97%90%EC%9D%B4%EC%A7%95%EB%9D%BD-agingloc/id6448716081?l=en-GB"
+          },
           { "text": "플레이스토어", "link": "https://play.google.com/store/apps/details?id=com.mediiot.agingloc&pli=1" }
         ]
       },
@@ -159,9 +183,7 @@
         "img": "",
         "code": "https://github.com/webstoryboy/port2023-vue",
         "view": "https://port2023-vue.netlify.app",
-        "btn": [
-          
-        ]
+        "btn": []
       },
       {
         "id": "medieye",
@@ -175,9 +197,7 @@
         "img": "images/medieye.png",
         "code": "https://github.com/webstoryboy/port2023-vue",
         "view": "https://port2023-vue.netlify.app",
-        "btn": [
-          
-        ]
+        "btn": []
       }
     ]
   },

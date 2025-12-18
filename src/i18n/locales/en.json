@@ -9,7 +9,9 @@
   },
   "intro": {
     "title": "About me",
-    "desc": ["As a business major, I approach problems from a strategic perspective and have built practical skills across both backend and frontend development through experience at a startup. I'm particularly interested in analyzing user behavior based on data and leveraging insights to improve services. I aim to be a problem-solving developer who is capable not only in development but also in data analysis."]
+    "desc": [
+      "As a business major, I approach problems from a strategic perspective and have built practical skills across both backend and frontend development through experience at a startup. I'm particularly interested in analyzing user behavior based on data and leveraging insights to improve services. I aim to be a problem-solving developer who is capable not only in development but also in data analysis."
+    ]
   },
   "tech": {
     "title": "Tech Stack",
@@ -24,48 +26,62 @@
   },
   "career": {
     "title": "Career",
-    "experience": {
-        "title": "Experience",
-        "lists": [
-          {
-            "institution": "Sejong University",
-            "degree": "Bachelor of Hotel Management",
-            "period": "2014.03 - 2022.02"
-          },
-          {
-            "institution": "Big Data Analysis & Recommendation System Development Bootcamp",
-            "degree": "K-Digital Training Course",
-            "period": "2022.09 - 2023.03",
-            "detail": "detail >"
-          },
-          {
-            "institution": "MEDI-IoT",
-            "degree": "Full Stack Developer",
-            "period": "2023.08 - 2024.12"
-          }
-        ]
+    "work_experience": {
+      "title": "Work Experience",
+      "lists": [
+        {
+          "company": "Medi-IoT",
+          "position": "Full Stack Developer",
+          "period": "2023.08 - 2024.12"
+        }
+      ]
+    },
+    "education": {
+      "title": "Education",
+      "lists": [
+        {
+          "institution": "Sejong University",
+          "degree": "Bachelor of Hotel Management",
+          "period": "2014.03 - 2022.02"
+        },
+        {
+          "institution": "K-Digital Training Bootcamp",
+          "degree": "Big Data Analysis & Recommendation System Development",
+          "period": "2022.09 - 2023.03",
+          "detail": "detail >"
+        },
+        {
+          "institution": "Korea University",
+          "degree": "Intelligence Information SW Academy",
+          "period": "2025.08 - 2025.12",
+          "detail": "detail >"
+        }
+      ]
     },
     "certifications": {
-        "title": "Certifications",
-        "lists": [
-          
-          {
-            "name": "ADsP: Advanced Data Analytics Semi-Professional",
-            "issuer": "Korea Data Agency",
-            "date": "2023.03"
-          },
-          {
-            "name": "SQLD: Structured Query Language Developer",
-            "issuer": "Korea Data Agency",
-            "date": "2025.04"
-          },
-          {
-            "name": "Engineer Information Processing",
-            "issuer": "Human Resources Development Service of Korea",
-            "date": "2025.06"
-          }
-
-        ]
+      "title": "Certifications",
+      "lists": [
+        {
+          "name": "ADsP: Advanced Data Analytics Semi-Professional",
+          "issuer": "Korea Data Agency",
+          "date": "2023.03"
+        },
+        {
+          "name": "SQLD: Structured Query Language Developer",
+          "issuer": "Korea Data Agency",
+          "date": "2025.04"
+        },
+        {
+          "name": "Engineer Information Processing",
+          "issuer": "Human Resources Development Service of Korea",
+          "date": "2025.06"
+        },
+        {
+          "name": "AICE: AI Certificate for Everyone - ASSOCIATE",
+          "issuer": "KT & The Korea Economic Daily",
+          "date": "2025.11"
+        }
+      ]
     },
     "languages": {
       "title": "Languages",
@@ -114,7 +130,10 @@
         "code": "https://github.com/webstoryboy/port2023-vite",
         "view": "https://port2023-vite.netlify.app",
         "btn": [
-          { "text": "App Store", "link": "https://apps.apple.com/kr/app/%ED%88%AC%EB%AA%A8%EC%96%B4-twomore-%EC%9A%B4%EB%8F%99-%EA%B8%B0%EB%A1%9D/id6677026088?l=en-GB" }
+          {
+            "text": "App Store",
+            "link": "https://apps.apple.com/kr/app/%ED%88%AC%EB%AA%A8%EC%96%B4-twomore-%EC%9A%B4%EB%8F%99-%EA%B8%B0%EB%A1%9D/id6677026088?l=en-GB"
+          }
         ]
       },
       {
@@ -147,7 +166,10 @@
         "code": "https://github.com/webstoryboy/port2023-next",
         "view": "https://port2023-next.netlify.app",
         "btn": [
-          { "text": "App Store", "link": "https://apps.apple.com/kr/app/%EC%97%90%EC%9D%B4%EC%A7%95%EB%9D%BD-agingloc/id6448716081?l=en-GB" },
+          {
+            "text": "App Store",
+            "link": "https://apps.apple.com/kr/app/%EC%97%90%EC%9D%B4%EC%A7%95%EB%9D%BD-agingloc/id6448716081?l=en-GB"
+          },
           { "text": "Play Store", "link": "https://play.google.com/store/apps/details?id=com.mediiot.agingloc&pli=1" }
         ]
       },
@@ -162,9 +184,7 @@
         "img": "",
         "code": "https://github.com/webstoryboy/port2023-vue",
         "view": "https://port2023-vue.netlify.app",
-        "btn": [
-          
-        ]
+        "btn": []
       },
       {
         "id": "medieye",
@@ -178,10 +198,8 @@
         "img": "images/medieye.png",
         "code": "https://github.com/webstoryboy/port2023-vue",
         "view": "https://port2023-vue.netlify.app",
-        "btn": [
-        ]
+        "btn": []
       }
-      
     ]
   },
   "contact": {
