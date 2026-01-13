@@ -3,8 +3,10 @@
     "intro": "소개 >",
     "tech": "기술 >",
     "career": "경력 >",
-    "project": "프로젝트 >",
     "work": "프로젝트 >",
+    "opensource": "오픈소스 >",
+    "presentation": "발표 >",
+    "article": "글 >",
     "contact": "연락처 >"
   },
   "intro": {
@@ -26,12 +28,12 @@
   },
   "career": {
     "title": "경력 사항",
-    "work-experience": {
+    "work_experience": {
       "title": "경력",
       "lists": [
         {
           "company": "(주)메디아이오티",
-          "position": "연구원 (개발자)",
+          "position": "연구원 (풀스택 개발)",
           "period": "2023.08 - 2024.12"
         }
       ]
@@ -109,13 +111,41 @@
     "category": {
       "all": "전체 보기",
       "personal": "개인 프로젝트",
+      "group": "그룹 프로젝트",
       "company": "회사 프로젝트"
     },
     "tag": {
       "personal": "개인",
+      "group": "그룹",
       "company": "회사"
     },
     "lists": [
+      {
+        "id": "lumiply",
+        "title": "Lumiply",
+        "category": "group",
+        "info": [
+          "딥러닝 기반의 조명 리라이팅 프로젝트입니다.",
+          "실내 이미지를 업로드하고 조명을 합성한 뒤 다양한 색상의 빛이 적용된 결과를 생성합니다."
+        ],
+        "stack": ["React", "FastAPI", "Flask", "Google Colab", "U-Net (Cross-Attention)", "MLP Adaptor"],
+        "img": "images/lumiply_gif_demo.gif",
+        "view": "https://port2023-vite.netlify.app",
+        "btn": [
+          {
+            "text": "클라이언트",
+            "link": "https://github.com/EthanYJLee/lumiply-client"
+          },
+          {
+            "text": "서버",
+            "link": "https://github.com/EthanYJLee/lumiply-server"
+          },
+          {
+            "text": "Colab",
+            "link": "https://github.com/EthanYJLee/lumiply-colab"
+          }
+        ]
+      },
       {
         "id": "twomore",
         "title": "TwoMore",
@@ -198,6 +228,38 @@
         "code": "https://github.com/webstoryboy/port2023-vue",
         "view": "https://port2023-vue.netlify.app",
         "btn": []
+      }
+    ]
+  },
+  "openSource": {
+    "title": "오픈소스",
+    "lists": [
+      {
+        "title": "오픈소스 기여",
+        "descriptions": [
+          { "content": "기여/활동 내역을 여기에 추가하세요." },
+          { "content": "GitHub 프로필", "href": "https://github.com/EthanYJLee" }
+        ]
+      }
+    ]
+  },
+  "presentation": {
+    "title": "발표",
+    "lists": [
+      {
+        "title": "발표 제목을 여기에 추가하세요",
+        "subTitle": "행사/세션 정보",
+        "at": "YYYY-MM",
+        "descriptions": [{ "content": "발표 요약/핵심 내용을 한두 줄로 작성하세요." }, { "content": "Slides", "href": "#" }]
+      }
+    ]
+  },
+  "article": {
+    "title": "글",
+    "lists": [
+      {
+        "content": "블로그/아티클 링크를 여기에 추가하세요.",
+        "href": "#"
       }
     ]
   },

@@ -3,8 +3,10 @@
     "intro": "intro >",
     "tech": "tech >",
     "career": "career >",
-    "project": "project >",
     "work": "work >",
+    "opensource": "open source >",
+    "presentation": "presentation >",
+    "article": "article >",
     "contact": "contact >"
   },
   "intro": {
@@ -31,7 +33,7 @@
       "lists": [
         {
           "company": "Medi-IoT",
-          "position": "Full Stack Developer",
+          "position": "Researcher (Full Stack Developer)",
           "period": "2023.08 - 2024.12"
         }
       ]
@@ -110,13 +112,41 @@
     "category": {
       "all": "All Projects",
       "personal": "Personal Projects",
+      "group": "Group Projects",
       "company": "Company Projects"
     },
     "tag": {
       "personal": "Personal",
+      "group": "Group",
       "company": "Company"
     },
     "lists": [
+      {
+        "id": "lumiply",
+        "title": "Lumiply",
+        "category": "group",
+        "info": [
+          "A re-lighting project based on deep learning.",
+          "User can place a light on the indoor image and synthesize the lighting, and generate results with various colors of light applied."
+        ],
+        "stack": ["React", "FastAPI", "Flask", "Google Colab", "U-Net (Cross-Attention)", "MLP Adaptor"],
+        "img": "images/lumiply_gif_demo.gif",
+        "view": "https://port2023-vite.netlify.app",
+        "btn": [
+          {
+            "text": "Client",
+            "link": "https://github.com/EthanYJLee/lumiply-client"
+          },
+          {
+            "text": "Server",
+            "link": "https://github.com/EthanYJLee/lumiply-server"
+          },
+          {
+            "text": "Colab",
+            "link": "https://github.com/EthanYJLee/lumiply-colab"
+          }
+        ]
+      },
       {
         "id": "twomore",
         "title": "TwoMore",
@@ -199,6 +229,38 @@
         "code": "https://github.com/webstoryboy/port2023-vue",
         "view": "https://port2023-vue.netlify.app",
         "btn": []
+      }
+    ]
+  },
+  "openSource": {
+    "title": "Open Source",
+    "lists": [
+      {
+        "title": "Open source contributions",
+        "descriptions": [
+          { "content": "Add your contributions/activities here." },
+          { "content": "GitHub profile", "href": "https://github.com/EthanYJLee" }
+        ]
+      }
+    ]
+  },
+  "presentation": {
+    "title": "Presentation",
+    "lists": [
+      {
+        "title": "Add a talk title here",
+        "subTitle": "Event/session info",
+        "at": "YYYY-MM",
+        "descriptions": [{ "content": "Summarize the talk in 1–2 lines." }, { "content": "Slides", "href": "#" }]
+      }
+    ]
+  },
+  "article": {
+    "title": "Article",
+    "lists": [
+      {
+        "content": "Add your blog/article link here.",
+        "href": "#"
       }
     ]
   },

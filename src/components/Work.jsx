@@ -150,6 +150,16 @@ const Work = () => {
           <motion.button
             className="category-button"
             variants={categoryButtonVariants}
+            animate={activeCategory === 'group' ? 'active' : 'inactive'}
+            onClick={() => setActiveCategory('group')}
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            {t('work.category.group')}
+          </motion.button>
+          <motion.button
+            className="category-button"
+            variants={categoryButtonVariants}
             animate={activeCategory === 'company' ? 'active' : 'inactive'}
             onClick={() => setActiveCategory('company')}
             whileHover={{ scale: 1.05 }}

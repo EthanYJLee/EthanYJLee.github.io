@@ -1,9 +1,13 @@
-import React, { useEffect } from "react";
+import React from "react";
 import Header from "./components/Header";
 import Intro from "./components/Intro";
 import Tech from "./components/Tech";
 import Career from "./components/Career";
 import Work from "./components/Work";
+// NOTE: 숨김 처리 (요청: 오픈소스/발표/글 섹션 & 탭 비노출)
+// import OpenSource from "./components/OpenSource";
+// import Presentation from "./components/Presentation";
+// import Article from "./components/Article";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import Skip from "./components/Skip";
@@ -25,6 +29,10 @@ const App = () => {
         <Tech />
         <Career />
         <Work />
+        {/* NOTE: 숨김 처리 (요청: 오픈소스/발표/글 섹션 & 탭 비노출) */}
+        {/* <OpenSource /> */}
+        {/* <Presentation /> */}
+        {/* <Article /> */}
         <Contact />
       </main>
       <Footer />

@@ -15,6 +15,19 @@ export const headerNav = [
     title: "work >",
     url: "#work",
   },
+  // NOTE: 숨김 처리 (요청: 오픈소스/발표/글 섹션 & 탭 비노출)
+  // {
+  //   title: "open source >",
+  //   url: "#opensource",
+  // },
+  // {
+  //   title: "presentation >",
+  //   url: "#presentation",
+  // },
+  // {
+  //   title: "article >",
+  //   url: "#article",
+  // },
   {
     title: "contact >",
     url: "#contact",

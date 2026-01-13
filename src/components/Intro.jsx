@@ -1,51 +1,34 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { motion } from "framer-motion";
 import { useTranslation } from 'react-i18next';
 
 // import about from "../assets/img/about.jpg";
 
-import { introText } from "../constants";
-
 const Intro = () => {
   const { t } = useTranslation();
-  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
-  const isMobile = windowWidth <= 768;
-  
-  useEffect(() => {
-    const handleResize = () => {
-      setWindowWidth(window.innerWidth);
-    };
-    
-    window.addEventListener("resize", handleResize);
-    
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
 
   return (
     <section id="intro">
       <div className="intro__inner">
-        <motion.h2 
+        <motion.h1
           className="intro__title title-font"
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
           {/* {t('intro.title')} */}
-          <h1 className="heading-font">
-              {/* <span className="title-font">portfolio</span> */}
-              
-              <motion.em
-                className="alt-font"
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: 0.3, duration: 0.5 }}
-              >
-                hi, I'm youngjin lee
-              </motion.em>
-          </h1>
-        </motion.h2>
+          <span className="heading-font">
+            {/* <span className="title-font">portfolio</span> */}
+            <motion.em
+              className="alt-font"
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: 0.3, duration: 0.5 }}
+            >
+              hi, I'm youngjin lee
+            </motion.em>
+          </span>
+        </motion.h1>
         
         <div className="intro__lines" aria-hidden="true">
           {[...Array(6)].map((_, index) => (

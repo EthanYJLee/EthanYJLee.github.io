@@ -1,5 +1,4 @@
 import React from "react";
-import { careerData } from "../constants";
 import { useTranslation } from "react-i18next";
 
 const Career = () => {
@@ -72,7 +71,7 @@ const Career = () => {
               ))}
             </div>
           </div>
-          {/* <div className="language__column">
+          <div className="language__column">
             <h3 className="column__title">{t("career.languages.title")}</h3>
             <div className="timeline">
               {languageData.map((item, index) => (
@@ -90,7 +89,7 @@ const Career = () => {
                 </div>
               ))}
             </div>
-          </div> */}
+          </div>
         </div>
       </div>
     </section>

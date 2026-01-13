@@ -1,29 +1,46 @@
 // Contact.jsx
 import React from "react";
-import { FaLinkedinIn, FaTwitter, FaGithub, FaEnvelope, FaPhone, FaMapMarkerAlt } from "react-icons/fa";
-import { useTranslation } from 'react-i18next';
+import { FaLinkedinIn, FaGithub, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
+import { useTranslation } from "react-i18next";
 import { motion } from "framer-motion";
 // import "./Contact.css"; // 아래 CSS를 Contact.css로 저장
 
 const Contact = () => {
   const { t } = useTranslation();
-  
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const form = e.currentTarget;
+    const formData = new FormData(form);
+
+    const name = String(formData.get("name") || "");
+    const email = String(formData.get("email") || "");
+    const message = String(formData.get("message") || "");
+
+    const subject = `Contact from ${name || "Portfolio"}`;
+    const body = [`From: ${name}`, `Email: ${email}`, "", message].join("\n");
+    const mailto = `mailto:lyj72011648@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+    window.location.href = mailto;
+    form.reset();
+  };
+
   return (
     <section id="contact">
       <div className="contact__inner">
-        <motion.h2 
+        <motion.h2
           className="contact__title"
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          <strong>{t('contact.title')}</strong>
+          <strong>{t("contact.title")}</strong>
         </motion.h2>
-        
+
         <div className="contact__container">
           {/* 왼쪽: 소개 및 소셜 링크 */}
-          <motion.div 
+          <motion.div
             className="contact__left"
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -32,15 +49,13 @@ const Contact = () => {
           >
             <div className="contact__intro">
               <h3 className="contact__subtitle">Let's Connect</h3>
-              <p className="contact__desc">
-                {t('contact.desc')}
-              </p>
+              <p className="contact__desc">{t("contact.desc")}</p>
             </div>
-            
+
             <div className="contact__image">
               <img src="images/communication.png" alt="contact illustration" />
             </div>
-            
+
             <div className="contact__socials">
               <h4>Follow Me</h4>
               <div className="social__links">
@@ -72,9 +87,9 @@ const Contact = () => {
               </div>
             </div>
           </motion.div>
-          
+
           {/* 오른쪽: 연락처 폼 */}
-          <motion.div 
+          <motion.div
             className="contact__right"
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -83,39 +98,22 @@ const Contact = () => {
           >
             <div className="contact__form-container">
               <h3 className="form__title">Send a Message</h3>
-              <form className="contact__form">
+              <form className="contact__form" onSubmit={handleSubmit}>
                 <div className="form__group">
-                  <input 
-                    type="text" 
-                    placeholder={t('contact.name')}
-                    required
-                  />
+                  <input name="name" type="text" placeholder={t("contact.name")} required />
                 </div>
                 <div className="form__group">
-                  <input 
-                    type="email" 
-                    placeholder={t('contact.email')}
-                    required
-                  />
+                  <input name="email" type="email" placeholder={t("contact.email")} required />
                 </div>
                 <div className="form__group form__group--full">
-                  <textarea 
-                    placeholder={t('contact.message')}
-                    rows={6}
-                    required
-                  />
+                  <textarea name="message" placeholder={t("contact.message")} rows={6} required />
                 </div>
-                <motion.button 
-                  type="submit"
-                  className="form__submit"
-                  whileHover={{ scale: 1.02, y: -2 }}
-                  whileTap={{ scale: 0.98 }}
-                >
-                  {t('contact.send')}
+                <motion.button type="submit" className="form__submit" whileHover={{ scale: 1.02, y: -2 }} whileTap={{ scale: 0.98 }}>
+                  {t("contact.send")}
                 </motion.button>
               </form>
             </div>
-            
+
             {/* 연락처 정보 */}
             <div className="contact__info">
               <div className="info__item">
