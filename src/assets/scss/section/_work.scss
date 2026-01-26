@@ -611,3 +611,42 @@
   // position: relative;
   z-index: 1;
 }
+
+// Print: ensure Work layout matches what user sees (text + image), and avoid clipping.
+// In print, page width can trigger mobile CSS widths while JSX still forces row layout via inline styles,
+// which can push the image out of the box (clipped by overflow:hidden). Force a print-safe column flow.
+@media print {
+  #work {
+    .work__wrap {
+      min-height: auto !important;
+    }
+
+    .work__item {
+      position: static !important;
+      top: auto !important;
+      left: auto !important;
+      height: auto !important;
+      overflow: visible !important;
+      flex-direction: column !important; // override inline flexDirection from React
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    .text-section,
+    .image-section {
+      width: 100% !important;
+      max-height: none !important;
+    }
+
+    .image-section {
+      overflow: visible !important;
+      padding: 0 20px 25px !important;
+
+      img {
+        display: block !important;
+        max-width: 100% !important;
+        height: auto !important;
+      }
+    }
+  }
+}
