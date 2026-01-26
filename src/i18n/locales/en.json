@@ -12,6 +12,9 @@
   "intro": {
     "title": "About me",
     "desc": [
+      "I have built a career focused on backend service operation and maintenance. After acquiring an existing service at a startup, I have performed code refactoring, feature improvements, server migrations, and deployments to enhance service stability. Particularly, I have been responsible for operating APIs directly connected to user interfaces, reproducing errors and analyzing causes to improve them. I aim to be a backend developer who consistently provides stable services like home, product, and content by identifying and fixing even small issues."
+    ],
+    "__desc__": [
       "As a business major, I approach problems from a strategic perspective and have built practical skills across both backend and frontend development through experience at a startup. I'm particularly interested in analyzing user behavior based on data and leveraging insights to improve services. I aim to be a problem-solving developer who is capable not only in development but also in data analysis."
     ]
   },
@@ -21,7 +24,7 @@
       "backend": "Backend",
       "frontend": "Frontend",
       "db": "DB",
-      "server": "Server / Deployment",
+      "server": "Server/Deployment",
       "os": "OS",
       "tools": "Tools"
     }
@@ -33,7 +36,7 @@
       "lists": [
         {
           "company": "Medi-IoT",
-          "position": "Researcher (Full Stack Developer)",
+          "position": "Researcher(SW Engineer)",
           "period": "2023.08 - 2024.12"
         }
       ]
@@ -47,7 +50,7 @@
           "period": "2014.03 - 2022.02"
         },
         {
-          "institution": "K-Digital Training Bootcamp",
+          "institution": "K-Digital Training",
           "degree": "Big Data Analysis & Recommendation System Development",
           "period": "2022.09 - 2023.03",
           "detail": "detail >"
@@ -122,14 +125,57 @@
     },
     "lists": [
       {
+        "id": "agingloc",
+        "title": "AgingLOC",
+        "subheading": "Development of Backend Service for Health Care Platform",
+        "category": "company",
+        "info": [
+          "AgingLOC is a clinically grounded personalized healthcare platform. It recommends 118 exercise videos and 168 program combinations based on questionnaires, fitness tests, and feedback.",
+          "- Took over an existing service, stabilized production, and improved features while cleaning up legacy code.",
+          "- Redesigned the admin UI flow for complex exercise-program inputs to improve operational efficiency.",
+          "- Built resilience features for real-world drop-off and errors (e.g., draft saves and session persistence).",
+          "- Operated user/admin-facing APIs end-to-end: reproduce issues-find root causes-fix-verify."
+        ],
+        "stack": ["Flutter", "Spring Boot", "Meteor", "MariaDB", "MongoDB"],
+        "img": "images/agingloc.png",
+        "code": "https://github.com/webstoryboy/port2023-next",
+        "view": "https://port2023-next.netlify.app",
+        "btn": [
+          {
+            "text": "App Store",
+            "link": "https://apps.apple.com/kr/app/%EC%97%90%EC%9D%B4%EC%A7%95%EB%9D%BD-agingloc/id6448716081?l=en-GB"
+          },
+          { "text": "Play Store", "link": "https://play.google.com/store/apps/details?id=com.mediiot.agingloc&pli=1" }
+        ]
+      },
+
+      {
+        "id": "medieye",
+        "title": "MEDI-EYE",
+        "subheading": "Server Migration and Stability Enhancement",
+        "category": "company",
+        "info": [
+          "MEDI-EYE is a digital healthcare system where doctors prescribe wavelength combinations via a web portal. Patients view prescriptions in a mobile app and control devices via BLE(Bluetooth Low Energy) for eye treatment.",
+          "- Supported a live-service server migration by rebuilding the deployment environment and stabilizing operations.",
+          "- Deployed and operated the service on Ubuntu-Docker-Nginx.",
+          "- Scripted log backup/cleanup to shorten incident response and reduce ops omissions.",
+          "- Documented bug reproduction steps, validated fixes, and deployed them."
+        ],
+        "stack": ["Android", "Spring Boot", "JSP", "PostgreSQL"],
+        "img": "images/medieye.png",
+        "code": "https://github.com/webstoryboy/port2023-vue",
+        "view": "https://port2023-vue.netlify.app",
+        "btn": []
+      },
+      {
         "id": "lumiply",
         "title": "Lumiply",
         "category": "group",
         "info": [
-          "A re-lighting project based on deep learning.",
-          "User can place a light on the indoor image and synthesize the lighting, and generate results with various colors of light applied."
+          "A deep learning–based lighting re-lighting project: users upload indoor images, synthesize lighting, and generate results with various colors applied.",
+          "Designed an inference-server architecture under limited GPU resources, improving async processing and the overall user waiting experience."
         ],
-        "stack": ["React", "FastAPI", "Flask", "Google Colab", "U-Net (Cross-Attention)", "MLP Adaptor"],
+        "stack": ["React", "FastAPI", "Flask", "Google Colab", "U-Net(Cross-Attention)", "MLP Adaptor"],
         "img": "images/lumiply_gif_demo.gif",
         "view": "https://port2023-vite.netlify.app",
         "btn": [
@@ -167,6 +213,19 @@
         ]
       },
       {
+        "id": "crackdetector",
+        "title": "Crack Detector",
+        "category": "company",
+        "info": [
+          "Developed a prototype of a mobile app that captures road surfaces with a camera, analyzes each frame in real-time using a YOLO model to detect cracks and sinkholes, and overlays bounding boxes on the smartphone screen during live recording."
+        ],
+        "stack": ["Flutter", "FastAPI", "MariaDB", "TensorFlow Lite"],
+        "img": "",
+        "code": "https://github.com/webstoryboy/port2023-vue",
+        "view": "https://port2023-vue.netlify.app",
+        "btn": []
+      },
+      {
         "id": "konnect",
         "title": "Konnect",
         "category": "personal",
@@ -182,53 +241,6 @@
           { "text": "Demo", "link": "http://www.konnect.guru/" },
           { "text": "Github", "link": "https://github.com/EthanYJLee/konnect-client" }
         ]
-      },
-      {
-        "id": "agingloc",
-        "title": "AgingLOC",
-        "category": "company",
-        "info": [
-          "AgingLOC is a platform that provides personalized healthcare services based on clinical evidence. 118 exercise guide videos and 168 combinations of exercise programs are provided by simple questionnaires, physical fitness tests, and adjusted by feedback.",
-          "Participated in refactoring, maintenance, troble shooting, and development of admin system for managing exercise programs."
-        ],
-        "stack": ["Flutter", "Spring Boot", "Meteor", "MariaDB", "MongoDB"],
-        "img": "images/agingloc.png",
-        "code": "https://github.com/webstoryboy/port2023-next",
-        "view": "https://port2023-next.netlify.app",
-        "btn": [
-          {
-            "text": "App Store",
-            "link": "https://apps.apple.com/kr/app/%EC%97%90%EC%9D%B4%EC%A7%95%EB%9D%BD-agingloc/id6448716081?l=en-GB"
-          },
-          { "text": "Play Store", "link": "https://play.google.com/store/apps/details?id=com.mediiot.agingloc&pli=1" }
-        ]
-      },
-      {
-        "id": "crackdetector",
-        "title": "Crack Detector",
-        "category": "company",
-        "info": [
-          "Developed a prototype of a mobile app that captures road surfaces with a camera, analyzes each frame in real-time using a YOLO model to detect cracks and sinkholes, and overlays bounding boxes on the smartphone screen during live recording."
-        ],
-        "stack": ["Flutter", "FastAPI", "MariaDB", "TensorFlow Lite"],
-        "img": "",
-        "code": "https://github.com/webstoryboy/port2023-vue",
-        "view": "https://port2023-vue.netlify.app",
-        "btn": []
-      },
-      {
-        "id": "medieye",
-        "title": "MEDI-EYE",
-        "category": "company",
-        "info": [
-          "MEDI-EYE is a digital healthcare system that allows doctors to prescribe specific wavelength combinations to each patient through a web browser. Patients can conveniently check their prescription information through a smartphone app and then use BLE (Bluetooth Low Energy) to operate medical devices for eye disease treatment.",
-          "Participated in the design phase, testing, and was responsible for server migration and maintenance."
-        ],
-        "stack": ["Android", "Spring Boot", "JSP", "PostgreSQL"],
-        "img": "images/medieye.png",
-        "code": "https://github.com/webstoryboy/port2023-vue",
-        "view": "https://port2023-vue.netlify.app",
-        "btn": []
       }
     ]
   },
@@ -274,7 +286,7 @@
   },
   "footer": {
     "desc": "Developer who enjoys communication and collaboration",
-    "copyright": "© 2024 Portfolio"
+    "copyright": "© 2026 Portfolio"
   },
   "language": {
     "en": "English",

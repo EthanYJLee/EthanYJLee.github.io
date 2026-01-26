@@ -358,6 +358,25 @@
           }
         }
 
+        .subheading {
+          margin: -6px 0 14px;
+          font-size: 1.05rem;
+          line-height: 1.35;
+          font-weight: 600;
+          color: var(--neutral-800);
+          opacity: 0.9;
+
+          @media (max-width: 992px) {
+            font-size: 1rem;
+          }
+
+          @media (max-width: 768px) {
+            margin: -4px 0 14px;
+            font-size: 1rem;
+            text-align: center;
+          }
+        }
+
         .text {
           text-wrap: pretty !important;
           margin-bottom: 1.2rem;
